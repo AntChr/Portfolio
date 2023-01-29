@@ -1,0 +1,50 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    height: 68px;
+    padding: 80px 30px 40px 30px;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.Header__accueil {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142.6%;
+    margin-right: 30px;
+
+
+    text-align: right;
+    text-decoration: underline;
+    color: rgba(7, 7, 199, 0.829);
+}
+.Header__competences {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142.6%;
+    margin-right: 30px;
+
+
+    text-align: right;
+    text-decoration: underline;
+    color: rgba(7, 7, 199, 0.829);
+}
+.Header__contact {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142.6%;
+
+
+    text-align: right;
+    text-decoration: underline;
+    color: rgba(7, 7, 199, 0.829);
+}

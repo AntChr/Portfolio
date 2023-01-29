@@ -1,4 +1,4 @@
-
+import '../style/components/_textbio.scss'
 
 function Textbio () {
     return (

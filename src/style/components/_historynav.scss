@@ -1,0 +1,58 @@
+.history__show{
+    margin: auto;
+    margin-bottom: 100px;
+}
+.container__historynav{
+    display: flex;
+    flex-direction: column;
+
+    &__btlist {
+        display: flex;
+        background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+        border-radius: 10px;
+
+        &__bt{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            height: 300px;
+            width: 1300px;
+
+            &__backgroundimg{
+                display: flex;
+                justify-content: center;
+                img{
+                object-fit: cover;
+                max-width: 350px;
+                max-height: 212px;
+            }
+            }
+        }
+
+        &__list{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            width: 20%;
+            cursor: pointer;
+
+            &__title{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                height: 100%;
+                background-color: transparent;
+                transition: background-color 1s ease-in-out;
+            
+                &:hover{
+                    background-color: #FFFFFF;
+                    transition: background-color 1s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.roots{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+    &__title{
+        margin-bottom: 150px;
+    }
+
+    &__background {
+        rotate: 90deg;
+        width: 1729px;
+        height: 1500px;
+
+    }
+    &__logo {
+        display: flex;
+        rotate: 90deg;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+    
+        
+    }
+    &__openclassrooms {
+        position: absolute;
+        bottom: 5.5%;
+        left: 49.5%
+    }
+    &__booki {
+        position: absolute;
+        bottom: -33.5%;
+        left: 64.8%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -34.7%;
+            left: 64.5%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 10px 10px 10px 6%;
+        }
+    }
+    &__ohmyfood{
+        position: absolute;
+        bottom: -45.5%;
+        left: 35.4%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -46.3%;
+            left: 14.8%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 14px 5% 14px 10px;
+        }
+    }
+    &__panthere{
+        position: absolute;
+        bottom: -74.9%;
+        left: 74%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -76.2%;
+            left: 73.5%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 16px 10px 16px 5.5%;
+        }
+    
+    }
+    &__kanap{
+        position: absolute;
+        bottom: -90.5%;
+        left: 27.2%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -92%;
+            left: 9%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 10px 2% 10px 10px;
+        }
+    }
+    &__hotakes{
+        position: absolute;
+        bottom: -110.7%;
+        left: 65.3%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -112%;
+            left: 64.8%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 17px 10px 16px 5.5%;
+        }
+    }
+    &__kasa{
+        position: absolute;
+        bottom: -124.2%;
+        left: 33.5%;
+        z-index: 1;
+    
+        &__description {
+            position: absolute;
+            bottom: -125%;
+            left: 12.9%;
+            width: 20%;
+            height: auto;
+            background-color: rgb(0, 113, 225);
+            color: #FFFFFF;
+            padding: 14px 4.8% 12px 10px;
+        }
+    }
+}
+

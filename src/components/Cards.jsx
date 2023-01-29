@@ -1,27 +1,27 @@
 import React from "react";
-import Dot from '../images/dot.jpg'
-import Dotempty from '../images/dotempty.jpg'
+
 
 // Affichage de tous les logements de la base de données avec leur image et titre
-const Cards = ({cover, title, rating}) => {
+const Cards = ({cover, title, rating, add, addToCart,}) => {
         const dots =[];
         for (let i =0; i < rating; i++) {
-            dots.push(<img src={Dot} alt="points" key={i} />);
+            dots.push(<span className="dot">•</span>);
         }
         const dotsempty =[];
         for (let i =0; i < (5-rating); i++) {
-            dotsempty.push(<img src={Dotempty} alt="points vides" key={i} />);
+            dotsempty.push(<span className="dotempty">o</span>);
         }
-        
     return (
-        <div>
-            <img className ='competence__list__img' src={cover} alt={title} />
-            <h2 className="competence__list__txt">{title}</h2>
-            <div className="logement__rating">
-                    {dots}
-                    {dotsempty}
+        <div className="competence__list__card">
+            <img className ='competence__list__card__img' src={cover} alt={title} />
+            <div className="competence__list__card__tr">
+                <h2 className="competence__list__card__tr__txt">{title}</h2>
+                <div className="competence__list__card__tr__rating">
+                        {dots}
+                        {dotsempty}
+                </div>
+                {add ? <button onClick={addToCart}>Ajouter</button> : null}
             </div>
-            
         </div>
     )
 }

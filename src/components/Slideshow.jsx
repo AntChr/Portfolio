@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import vectorleft from '../images/vectorleft.png'
 import vectorright from '../images/vectorright.png'
+import '../style/components/_slideshow.scss'
 
 
 const Slideshow = ({slides}) => {
@@ -35,6 +36,7 @@ const Slideshow = ({slides}) => {
     },[currentIndex])
 return (
     <div className="container__carroussel">
+        <h1> Qui suis-je</h1>
         <div className="container__carroussel__left" onClick={goToPrevious}>
             <img  src={vectorleft} alt="précédent" />
         </div>

@@ -4,7 +4,7 @@
         "title":"Autonomie",
         "cover":"https://www.wimi-teamwork.com/static/medias/wimi-autonomie-travail.jpg",
         "rating":"5",
-        "price":4250,
+        "price":3500,
         "add": false
     },
     {
@@ -12,7 +12,7 @@
         "title":"Patience",
         "cover":"https://nicolebordeleau.com/wp-content/uploads/2015/11/ralentir.jpg",
         "rating":"5",
-        "price":4250,
+        "price":3500,
         "add": false
     },
     {
@@ -20,7 +20,7 @@
         "title":"Transparence",
         "cover":"data:image/jpeg;base64,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",
         "rating":"5",
-        "price":4250,
+        "price":3500,
         "add": false
     },
     {
@@ -52,7 +52,7 @@
         "title":"Thermique du Bâtiment",
         "cover":"https://static.wixstatic.com/media/f4f0c7_51a06a9aecd847599f49fa0e2825e383~mv2.png/v1/fill/w_581,h_485,al_c,lg_1,q_85,enc_auto/f4f0c7_51a06a9aecd847599f49fa0e2825e383~mv2.png",
         "rating":"5",
-        "price":3750,
+        "price":3250,
         "add": true
     },
     {
@@ -60,7 +60,7 @@
         "title":"Bâtiment Passif",
         "cover":"https://www.lamaisonpassive.fr/wp-content/uploads/2023/01/LA-MAISON-DU-PASSIF_logo_original-350x212.png",
         "rating":"5",
-        "price":3750,
+        "price":3250,
         "add": true
     },
     {
@@ -68,7 +68,7 @@
         "title":"Formateur",
         "cover":"https://f.maformation.fr/edito/sites/3/2022/03/formateur.jpeg",
         "rating":"3",
-        "price":3750,
+        "price":3250,
         "add": true
     },
     {
@@ -76,7 +76,7 @@
         "title":"PHPP",
         "cover":"http://www.lamaisonpassive.fr/wp-content/uploads/2015/08/Logo-PHPPsite-300x143.jpg",
         "rating":"5",
-        "price":3750,
+        "price":3250,
         "add": true
     },
     {
@@ -92,7 +92,7 @@
         "title":"Anglais",
         "cover":"http://secretsdereussite.com/wp-content/uploads/2018/05/decide-apprendre.jpg",
         "rating":"4",
-        "price":4250,
+        "price":3500,
         "add": false
     }
 ]
