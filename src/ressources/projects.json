@@ -1,0 +1,74 @@
+[
+    {   
+        "id":"p01",
+        "url":"https://ng-pokemon-app-b2fbc.web.app/login",
+        "image":"./Logos_projets/Pikachu.png",
+        "title": "Pokemon APP",
+        "statut": "Terminé",
+        "langage":"Angular",
+        "description":"Réalisation d'un site responsive qui répertorie tous les pokemons de la 1ère génération où l'utilisateur doit s'identifier et peut ajouter, modifier ou enlever un pokemon."
+    },
+    {   
+        "id":"p02",
+        "url":"https://6424962e0adbd32374a70d86--astonishing-valkyrie-f2f7e1.netlify.app/",
+        "image":"./Logos_projets/Yt.png",
+        "title": "AC Tube",
+        "statut": "Terminé",
+        "langage":"React - RapidAPI - Material UI",
+        "description":"Clonage du site youtube avec l'utilisation d'une API pour l'affichage de plusieurs dizaines de vidéos, avec une recherche, des rubriques et responsive"
+    },
+    {   
+        "id":"p03",
+        "url":"",
+        "image":"./Logos_projets/Social_media.png",
+        "title": "Réseau Social",
+        "statut": "En cours",
+        "langage":"React - Express - MongoDB - NodeJS",
+        "description":"Application FullStack d'un réseau social avec la création et la sécurisation des données utilisateurs et toute les fonctionnalité d'un réseau social ainsi qu'un dark mode"
+    },
+    {   
+        "id":"p04",
+        "url":"",
+        "image":"./Logos_projets/Bubbles.png",
+        "title": "AC Chat",
+        "statut": "Prochainement",
+        "langage":"React - Material UI",
+        "description":"Création d'une application de discussion avec la possibilité d'envoyer une image et de savoir les personnes qui ont lu le message"
+    },
+    {   
+        "id":"p05",
+        "url":"",
+        "image":"./Logos_projets/Graphic.png",
+        "title": "Dashboard",
+        "statut": "Prochainement",
+        "langage":"React - Material UI",
+        "description":"Site comportant toutes les fonctionnalité d'un dashboard avec notamment un calendrier, graphique tableau, répartition des tâches etc..."
+    },
+    {   
+        "id":"p06",
+        "url":"",
+        "image":"./Logos_projets/Spotify.png",
+        "title": "Spotify v2",
+        "statut": "Prochainement",
+        "langage":"React",
+        "description":"Clonage du site spotify"
+    },
+    {   
+        "id":"p07",
+        "url":"",
+        "image":"./Logos_projets/Tetris.png",
+        "title": "Tetris",
+        "statut": "Prochainement",
+        "langage":"React",
+        "description":"Réalisation du jeux Tetris en full React"
+    },
+    {   
+        "id":"p08",
+        "url":"",
+        "image":"./Logos_projets/Dumbell.png",
+        "title": "Fitness Application",
+        "statut": "Prochainement",
+        "langage":"React",
+        "description":"Création d'une application responsive de fitness"
+    }
+]

@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import HomePage from "./scenes/homePage/HomePage"
+import Projects from "./scenes/projects/Projects";
+import Skills from "./scenes/skills/Skills";
+import Contact from "./scenes/contact/Contact"
+import { CartContext } from "./components/CartContext"
+import { useState } from "react";
+
 
 function App() {
+  const [panier, setPanier] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <CartContext.Provider value={{panier, setPanier}}>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/projets" element={<Projects/>} />
+          <Route path="/competences" element={<Skills/>} />
+          <Route path="/contact" element={<Contact/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
+    </CartContext.Provider>
   );
 }
 
