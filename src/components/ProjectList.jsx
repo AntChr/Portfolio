@@ -39,7 +39,7 @@ const ProjectList = ({data}) => {
         <Typography variant="subtitle1">{data.langage}</Typography>
       </Box>
       <Box sx={{ width:"30%", textAlign:"center"}}>
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center" }}>{signal()}<p>{data.statut}</p></div>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center" }}>{signal()}<p style={{width:"35%"}}>{data.statut}</p></div>
       </Box>
       <Box sx={{width:"30%", textAlign:"center"}}>
         <p>{data.description}</p>
