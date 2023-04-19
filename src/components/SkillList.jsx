@@ -112,7 +112,7 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             isAddedToCart ? (
             <button onClick={handleRemoveFromCartClick} style={{
             color:"#000000",
-            width:"45px",
+            width:"16%",
             height:"45px",
             backgroundColor:"transparent",
             display:"flex",
@@ -128,7 +128,7 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
           ) : (  
           <button onClick={handleAddToCartClick} style={{
             color:"#000000",
-            width:"45px",
+            width:"16%",
             height:"45px",
             backgroundColor:"transparent",
             border:"2px solid #000000",
