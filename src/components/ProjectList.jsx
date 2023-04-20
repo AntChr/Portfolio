@@ -62,13 +62,13 @@ const ProjectList = ({data}) => {
           </a>
         </Box>
         <Box sx={{width:"100%", margin:"auto", textAlign:"center"}}>
-          <Typography variant='h2' sx={{fontSize:"19px"}}>{data.title}</Typography>
+          <Typography variant='h2' sx={{fontSize:"19px", color:"#000000",}}>{data.title}</Typography>
         </Box>
         <Box sx={{width:"100%", textAlign:"center"}}>
-          <Typography variant="subtitle1">{data.langage}</Typography>
+          <Typography variant="subtitle1"sx={{color:"#000000"}}>{data.langage}</Typography>
         </Box>
         <Box sx={{ width:"100%", textAlign:"center"}}>
-          <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>{signal()}<p style={{width:"35%"}}>{data.statut}</p></div>
+          <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>{signal()}<p style={{width:"35%", color:"#000000",}}>{data.statut}</p></div>
         </Box>
         <Box sx={{width:"100%", textAlign:"center"}}>
           <p style={{color:"#000000"}}>{data.description}</p>
