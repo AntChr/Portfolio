@@ -91,7 +91,7 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
       
       {/* Mobile Device */}
       {!isNonMobileScreens && (
-        <FlexBetween sx={{
+        <FlexBetween key={data.id} sx={{
           display:"flex",
           flexDirection:"column",
           width:"100%",
@@ -100,28 +100,19 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
           borderRadius:"48px 48px 48px 0px",
           marginBottom:"15px",
           }}>
-      <Box key={data.id} sx={{ height:"100%"}}>
-        <img src={data.cover} alt={data.title} style={{ width:"300px", height:"70%", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
-        <Box sx={{padding:"10px 0px 0px 21px"}}>
-          <Typography variant="h2" style={{color:"#FFFFFF", fontSize:"19px"}}>{data.title}</Typography>
-          <Box sx={{display:"flex"}}>
-            {dots}
-            {dotsempty}
-          </Box>
-          {data.add && (
+        <Box sx={{height:"200px", width:"100%"}}>
+        <img src={data.cover} alt={data.title} style={{ width:"318px", height:"200px", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
+        {data.add && (
             isAddedToCart ? (
-              <Box sx={{position:"relative",
-              bottom:"232px",
-              left:"218px",
-              width:"45px",
-              height:"45px" 
-              }}>
             <button onClick={handleRemoveFromCartClick} style={{
             color:"#000000",
-            width:"100%",
-            height:"100%",
             backgroundColor:"transparent",
             display:"flex",
+            position:"relative",
+            bottom:"92%",
+            left:"78%",
+            width:"45px",
+            height:"45px", 
             alignItems:"center",
             paddingLeft:"12px",
             border:"2px solid #000000",
@@ -129,31 +120,31 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             fontSize:"50px",
             cursor:"pointer",
             }}>-</button>
-            </Box>
           ) : (  
-            <Box sx={{
-            position:"relative",
-            bottom:"232px",
-            left:"218px",
-            width:"45px",
-            height:"45px",
-            marginLeft:"0px" 
-            }}>
           <button onClick={handleAddToCartClick} style={{
             color:"#000000",
-            width:"100%",
-            height:"100%",
+            position:"relative",
+            bottom:"92%",
+            left:"78%",
+            width:"45px",
+            height:"45px",
+            marginLeft:"0px", 
             backgroundColor:"transparent",
             border:"2px solid #000000",
             borderRadius:"50%",
             fontSize:"40px",
             cursor:"pointer",
              }}>+</button>
-            </Box>
           )
         )} 
         </Box>
-      </Box>
+        <Box sx={{padding:"10px 0px 0px 21px", width:"100%", height:"100%"}}>
+          <Typography variant="h2" style={{color:"#FFFFFF", fontSize:"19px", marginBottom:"10px", height:"40%"}}>{data.title}</Typography>
+          <Box sx={{display:"flex"}}>
+            {dots}
+            {dotsempty}
+          </Box>
+        </Box>
       </FlexBetween>
       )}
       </>

@@ -10,9 +10,9 @@ const ProjectList = ({data}) => {
     if(data.statut === "Terminé") {
       return <div style={{display:"flex", marginRight:"13px", width:"10px", height:"10px", backgroundColor:"rgba(113, 199, 32, 0.932)", borderRadius:"50%"}}/>
     } else if (data.statut === "En cours") {
-      return <div style={{display:"flex",marginRight:"13px", width:"10px", height:"10px", backgroundColor:"rgba(235, 142, 20, 0.932)", borderRadius:"50%"}} />
+      return <div style={{display:"flex",justifyContent:"flex-end", marginRight:"13px", width:"10px", height:"10px", backgroundColor:"rgba(235, 142, 20, 0.932)", borderRadius:"50%"}} />
     } else if (data.statut === "Prochainement") {
-      return <div style={{display:"flex",marginRight:"13px", width:"10px", height:"10px", backgroundColor:"rgba(235, 45, 20, 0.932)", borderRadius:"50%", textAlign:"center"}}/>
+      return <div style={{display:"flex",justifyContent:"flex-end", marginRight:"13px", width:"10px", height:"10px", backgroundColor:"rgba(235, 45, 20, 0.932)", borderRadius:"50%", textAlign:"center"}}/>
     }
   }
   return (
@@ -33,16 +33,16 @@ const ProjectList = ({data}) => {
         </a>
       </Box>
       <Box sx={{width:"30%", margin:"auto", textAlign:"center"}}>
-        <Typography variant='h2' sx={{fontSize:"19px"}}>{data.title}</Typography>
+        <Typography variant='h2' sx={{fontSize:"19px",  color:"#000000", fontWeight:"bolder"}}>{data.title}</Typography>
       </Box>
       <Box sx={{width:"30%", textAlign:"center"}}>
-        <Typography variant="subtitle1">{data.langage}</Typography>
+        <Typography variant="subtitle1" style={{ color:"#000000", fontWeight:"bolder"}}>{data.langage}</Typography>
       </Box>
       <Box sx={{ width:"30%", textAlign:"center"}}>
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center" }}>{signal()}<p style={{width:"35%"}}>{data.statut}</p></div>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center", textAlign:"start" }}>{signal()}<p style={{width:"35%", color:"#000000", fontWeight:"bolder"}}>{data.statut}</p></div>
       </Box>
       <Box sx={{width:"30%", textAlign:"center"}}>
-        <p style={{color:"#000000"}} >{data.description}</p>
+        <p style={{color:"#000000", fontWeight:"bolder"}} >{data.description}</p>
       </Box>
     </Box>
     )}
