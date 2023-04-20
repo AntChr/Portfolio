@@ -47,7 +47,7 @@ const Card = ({data, DefaultTotal = 14000}) => {
           <div style={{display:"flex", justifyContent:"space-between", marginBottom:"17px", width:"auto", paddingLeft:"17px"}} key={skill.id ? skill.id : index}><span>{skill.title}</span><span>{skill.price} € brut/an</span></div>
         ))}
         <span style={{width:"80%", height:"2px", backgroundColor:"#00163F", margin:"0px 1% 10px 10%" }}></span>
-        <h3 style={{display:"flex", justifyContent:"space-between", fontSize:"19px", height:"23px", marginBottom:"29px", width:"auto", paddingLeft:"17px"}}><span>Total</span><span>{total} € brut/an</span></h3>
+        <h3 style={{display:"flex", justifyContent:"space-between", fontSize:"19px", width:"90%", height:"23px", marginBottom:"29px", paddingLeft:"17px"}}><span>Total</span><span>{total} € brut/an</span></h3>
         <button onClick={handleClearCart} style={{
           width:"260px",
           height:"51px",

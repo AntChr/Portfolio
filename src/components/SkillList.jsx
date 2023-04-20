@@ -110,10 +110,16 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
           </Box>
           {data.add && (
             isAddedToCart ? (
+              <Box sx={{position:"relative",
+              bottom:"232px",
+              left:"218px",
+              width:"45px",
+              height:"45px" 
+              }}>
             <button onClick={handleRemoveFromCartClick} style={{
             color:"#000000",
-            width:"16%",
-            height:"45px",
+            width:"100%",
+            height:"100%",
             backgroundColor:"transparent",
             display:"flex",
             alignItems:"center",
@@ -122,24 +128,30 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             borderRadius:"50%",
             fontSize:"50px",
             cursor:"pointer",
-            position:"relative",
-            bottom:"235px",
-            left:"78%" }}>-</button>
+            }}>-</button>
+            </Box>
           ) : (  
+            <Box sx={{
+            position:"relative",
+            bottom:"232px",
+            left:"218px",
+            width:"45px",
+            height:"45px",
+            marginLeft:"0px" 
+            }}>
           <button onClick={handleAddToCartClick} style={{
             color:"#000000",
-            width:"16%",
-            height:"45px",
+            width:"100%",
+            height:"100%",
             backgroundColor:"transparent",
             border:"2px solid #000000",
             borderRadius:"50%",
             fontSize:"40px",
             cursor:"pointer",
-            position:"relative",
-            bottom:"235px",
-            left:"78%" }}>+</button>
+             }}>+</button>
+            </Box>
           )
-          )} 
+        )} 
         </Box>
       </Box>
       </FlexBetween>

@@ -104,7 +104,7 @@ const ContactForm = () => {
             <div className="trait"style={{width:"70px",height:"2px", backgroundColor:"#FFFFFF"}}/>
               </Box>
               <Box sx={{textAlign:"center"}}>
-              <a href='#'
+              <a href='#' target="_blank"
               onClick={(e) => {
                 window.location.href="mailto:antoine.charriere.16@eigsi.fr"
                 e.preventDefault()
@@ -112,10 +112,10 @@ const ContactForm = () => {
               >
                 <img src={mail} alt="icône gmail"/>
               </a>
-              <a href="https://www.linkedin.com/in/antoine-charriere-39bbb87b/">
+              <a target="_blank" href="https://www.linkedin.com/in/antoine-charriere-39bbb87b/">
               <img src={linkedin} alt="icône linkedin" style={{margin:"0px 62px 0px 62px"}}/>
               </a>
-              <a href="https://github.com/AntChr">
+              <a target="_blank" href="https://github.com/AntChr">
               <img src={github} alt="icône github"/>
               </a>
               </Box>

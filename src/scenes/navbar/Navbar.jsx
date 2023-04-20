@@ -172,7 +172,7 @@ const Navbar = () => {
           </Typography>
           </FlexBetween>
           <FlexBetween>
-            <Link to='#'
+            <Link to='#' target="_blank"
             onClick={(e) => {
               window.location.href="mailto:antoine.charriere.16@eigsi.fr"
               e.preventDefault()
@@ -180,10 +180,10 @@ const Navbar = () => {
             >
               <img src={mail} alt="icône gmail" style={{marginRight:"10px"}}/>
             </Link>
-            <Link to="https://www.linkedin.com/in/antoine-charriere-39bbb87b/">
+            <Link target="_blank" to="https://www.linkedin.com/in/antoine-charriere-39bbb87b/" >
             <img src={linkedin} alt="icône linkedin" style={{marginRight:"10px"}}/>
             </Link>
-            <Link to="https://github.com/AntChr">
+            <Link target="_blank" to="https://github.com/AntChr">
             <img src={github} alt="icône github" style={{marginRight:"10px"}}/>
             </Link>
           </FlexBetween>

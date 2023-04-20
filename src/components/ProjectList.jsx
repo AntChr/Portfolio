@@ -42,7 +42,7 @@ const ProjectList = ({data}) => {
         <div style={{display:"flex", justifyContent:"center", alignItems:"center" }}>{signal()}<p style={{width:"35%"}}>{data.statut}</p></div>
       </Box>
       <Box sx={{width:"30%", textAlign:"center"}}>
-        <p>{data.description}</p>
+        <p style={{color:"#000000"}} >{data.description}</p>
       </Box>
     </Box>
     )}
