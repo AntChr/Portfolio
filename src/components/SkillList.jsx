@@ -94,14 +94,14 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
         <FlexBetween key={data.id} sx={{
           display:"flex",
           flexDirection:"column",
-          width:"100%",
+          width:"318px",
           height:"280px",
           backgroundColor:"rgba(0, 32, 139, 0.86)",
           borderRadius:"48px 48px 48px 0px",
           marginBottom:"15px",
           }}>
         <Box sx={{height:"200px", width:"100%"}}>
-        <img src={data.cover} alt={data.title} style={{ width:"318px", height:"200px", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
+        <img src={data.cover} alt={data.title} style={{ width:"100%", height:"200px", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
         {data.add && (
             isAddedToCart ? (
             <button onClick={handleRemoveFromCartClick} style={{
