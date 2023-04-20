@@ -23,9 +23,10 @@ const Highlights = ({data}) => {
     <Box className="Highlights" sx={{
       display:"flex",
       flexDirection:"column",
-      justifyContent:"center",
+      justifyContent:"flex-start",
       height:"100%",
       width:"100%",
+      paddingTop:"40px",
       backgroundColor:"#0A0019",
       position:"relative"
     }}>
@@ -90,13 +91,12 @@ const Highlights = ({data}) => {
                 </Box>
                 <Box sx={{
                   backgroundColor:"transparent",
-                  color: '#A7A7AD',
                   width: '100%',
                   padding: '8px'
                 }}>
-                  <Typography variant="h5" sx={{ display:"flex" }}>
+                  <p style={{ display:"flex", color:"#FFFFFF", fontSize:"24px",fontWeight:"bold", WebkitTextStroke: "1px #FFFFFF" }}>
                     {item.text}
-                  </Typography>
+                  </p>
                 </Box>
               </Box>
             )}
@@ -104,7 +104,7 @@ const Highlights = ({data}) => {
         ))}
           </Box>
         </Box>
-        <div style={{position:"absolute", top:"100%",left:"0", zIndex:"2"}}>
+        <div style={{position:"absolute", top:"99%",left:"0", zIndex:"2"}}>
             <img src={bordure} alt="bordure" style={{width:"100%"}}/>
           </div>
       </Box>

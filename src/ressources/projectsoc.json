@@ -33,7 +33,7 @@
     },
     {   
         "id":"05",
-        "url":"https://hot-takes-6mmk.onrender.com/login",
+        "url":"https://hot-takes-6mmk.onrender.com",
         "title": "Hot Takes",
         "projetnumber":"5",
         "langage":"Javascript, Express, MongoDB",

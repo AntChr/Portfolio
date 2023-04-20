@@ -97,7 +97,7 @@ html {
 
 .highlight-active {
   width: 70%;
-  height: 80%;
+  height: 100%;
   animation: scale-up-tl 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 @keyframes scale-up-tl {
@@ -115,13 +115,8 @@ html {
   display: none;
 }
 
-.text__box {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.box__img:hover .text__box {
+.text__box:focus {
   opacity: 0.75;
-  
 }
 .planet__yellow {
   display: inline-block;

@@ -40,8 +40,8 @@ const Roadmap = ({data}) => {
               </p>
           </Box>
       </FlexBetween>
-      <div style={{position:"absolute", top:"calc(100vh * 1)", zIndex:"4"}}>
-            <img src={bordure} alt="bordure" style={{width:"100%"}}/>
+      <div style={{position:"absolute", top:"calc(100vh * 1)", zIndex:"4", width:"100%"}}>
+            <img src={bordure} alt="bordure" style={{width:"100%", height:"180px"}}/>
           </div>
           <Box sx={{position:"relative"}}>
           <img src={bgroadmap} alt="arrière plan roadmap" style={{position:"relative", top:"5px", zIndex:"0", width:"100%"}}/>
@@ -77,22 +77,13 @@ const Roadmap = ({data}) => {
           </div>
           <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"30%", position:"absolute", zIndex:"4", right:"6.8%", top:"19%"}}>
             <Box sx={{display:"flex"}}>
-                <Box className="text__box"sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  backgroundColor:"#A6C8E8",
-                  borderRadius:"10px",
-                  padding:"5px",
-                  margin:"0px",
-                  width:"100%",
-                  height:"100%"
-                }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[0].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[0].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[0].description}</Typography>
+            <Box className="text__box" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"100%", height:"100%" }}>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[0].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].description}</Typography>
                 </Box>
-                <Box sx={{width:"60%"}}>
+                <Box sx={{width:"60%", marginLeft:"10px"}}>
                   <Link to={data[0].url} target="_blank" style={{width:"100%",height:"100%"}}>
                     <img src={booki} alt={data[0].title} style={{ width:"auto", height:"auto", borderRadius:"50%" }}/>
                   </Link>
@@ -113,7 +104,7 @@ const Roadmap = ({data}) => {
           </FlexBetween>
           <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"30%", position:"absolute", zIndex:"4",left:"15.3%", top:"28%"}}>
           <Box sx={{display:"flex"}}>
-              <Box sx={{width:"38%"}}>
+              <Box sx={{width:"28%", marginRight:"10px"}}>
                   <Link href={data[1].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                     <img 
@@ -148,10 +139,10 @@ const Roadmap = ({data}) => {
                   width:"100%",
                   height:"100%"
                 }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[1].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[1].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[1].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[1].description}</Typography>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[1].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[1].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].description}</Typography>
                 </Box>
               </Box>
           </FlexBetween>
@@ -167,12 +158,12 @@ const Roadmap = ({data}) => {
                   width:"100%",
                   height:"100%"
                 }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[2].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[2].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[2].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[2].description}</Typography>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[2].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[2].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].description}</Typography>
                 </Box>
-            <Box sx={{width:"60%"}}>
+            <Box sx={{width:"60%", marginLeft:"10px"}}>
             <Link to={data[2].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -201,7 +192,7 @@ const Roadmap = ({data}) => {
           </FlexBetween>
           <FlexBetween className="box__img" sx={{ flexDirection:"column", width:"30%", position:"absolute", zIndex:"4",left:"15.3%", top:"48%"}}>
           <Box sx={{display:"flex"}}>
-            <Box sx={{width:"41%"}}>
+            <Box sx={{width:"28%", marginRight:"10px"}}>
             <Link to={data[3].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -237,10 +228,10 @@ const Roadmap = ({data}) => {
                   width:"100%",
                   height:"100%"
                 }}>
-                <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[3].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[3].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[3].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[3].description}</Typography>
+                <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[3].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[3].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].description}</Typography>
                 </Box>
               </Box>
           </FlexBetween>
@@ -256,12 +247,12 @@ const Roadmap = ({data}) => {
                   width:"100%",
                   height:"100%"
                 }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[4].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[4].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[4].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[4].description}</Typography>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[4].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[4].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].description}</Typography>
                 </Box>
-            <Box sx={{width:"60%"}}>
+            <Box sx={{width:"60%", marginLeft:"10px"}}>
             <Link to={data[4].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -290,7 +281,7 @@ const Roadmap = ({data}) => {
           </FlexBetween>
           <FlexBetween className="box__img" sx={{flexDirection:"column", width:"30%", position:"absolute", zIndex:"4",left:"15.3%", top:"66%"}}>
           <Box sx={{display:"flex"}}>
-            <Box sx={{width:"41%"}}>
+            <Box sx={{width:"28%", marginRight:"10px"}}>
             <Link to={data[5].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -325,10 +316,10 @@ const Roadmap = ({data}) => {
                   width:"100%",
                   height:"100%"
                 }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#4545D8", fontSize:"15px"}}>{data[5].title}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>Projet {data[5].projetnumber}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[5].langage}</Typography>
-                  <Typography style={{color:"#4545D8", fontSize:"15px"}}>{data[5].description}</Typography>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[5].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[5].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].description}</Typography>
                 </Box>
               </Box>
           </FlexBetween>

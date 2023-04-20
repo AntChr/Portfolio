@@ -51,7 +51,7 @@ const ContactForm = () => {
       <Box sx={{width:"auto", height:"100%", padding:"92px 228px 92px 228px"}}>
         <Box sx={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}}>
           <Typography variant="h1" style={{fontSize:"54px"}}>
-          Get in Touch !
+          Contact
           </Typography>
           <Typography variant="subtitle1" style={{ width:"587px", marginBottom:"54px"}}>
             Pour me contacter, rien de plus simple, il suffit de remplir ce formulaire. Je vous répondrais au plus vite
@@ -75,19 +75,20 @@ const ContactForm = () => {
             borderRadius:"20px",
             border:"none",
             marginRight:"17px",
-            paddingLeft:"16px"
+            paddingLeft:"16px",
+            cursor:"pointer"
             }}/>
-          <input className="user" type="email" name="user_email" placeholder="Email" style={{width:"450px", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none", paddingLeft:"16px"}} />
+          <input className="user" type="email" name="user_email" placeholder="Email" style={{width:"450px", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none", paddingLeft:"16px", cursor:"pointer"}} />
           </Box>
           <Box sx={{width:"100%", marginBottom:"17px"}}>
-          <input className="user" type="text" name="subject" placeholder="Sujet" style={{width:"100%", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none",paddingLeft:"16px"}}/>
+          <input className="user" type="text" name="subject" placeholder="Sujet" style={{width:"100%", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none",paddingLeft:"16px", cursor:"pointer"}}/>
           </Box>
           <Box sx={{marginBottom:"14px"}}>
-          <textarea className="message" name="message" placeholder="Message" style={{width:"808px", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none"}}/>
+          <textarea className="message" name="message" placeholder="Message" style={{width:"808px", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none", cursor:"pointer"}}/>
           </Box>
           <Box sx={{display:"flex", justifyContent:"flex-end", width:"840px"}}>
           <input className="send" type="submit" placeholder="Envoyer" onClick={handleSubmit} 
-          style={{ width:"156px", height:"48px", backgroundColor:"#2718AA", color:"#FFFFFF", borderRadius:"20px", border:"none",}}/>
+          style={{ width:"156px", height:"48px", backgroundColor:"#2718AA", color:"#FFFFFF", borderRadius:"20px", border:"none", cursor:"pointer"}}/>
           </Box>
         </form>
           </Box>
@@ -131,7 +132,7 @@ const ContactForm = () => {
       <Box sx={{width:"auto", height:"auto", padding:"15px"}}>
         <Box sx={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}}>
           <Typography variant="h1" style={{fontSize:"44px", marginBottom:"10px"}}>
-          Get in Touch !
+          Contact
           </Typography>
           <Typography variant="subtitle1" style={{ width:"100%", marginBottom:"34px"}}>
             Pour me contacter, rien de plus simple, il suffit de remplir ce formulaire. Je vous répondrais au plus vite
