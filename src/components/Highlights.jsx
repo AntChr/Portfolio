@@ -199,6 +199,9 @@ const Highlights = ({data}) => {
           ))}
         </Box>
         </Box>
+        <div style={{position:"absolute", bottom:"-165%",left:"0", zIndex:"2"}}>
+            <img src={bordure} alt="bordure" style={{width:"100%"}}/>
+          </div>
       </Box>
           )}
 

@@ -338,25 +338,24 @@ const Roadmap = ({data}) => {
 
   {/* Mobile Device */}
   {isMobileScreens && (
-    <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
-      <div style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4"}}>
-          <img src={bordure} alt="bordure" style={{width:"100%"}}/>
-      </div>
-      <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"100%", left:"49%", opacity:"85%"}}/>
+    <Box className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
+          <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
+      <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"100%", left:"48%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
-              <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",margin:"30% 30% 10px 30%",color:"#FFFFFF",fontSize:"69px"}}>
+              <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",margin:"30% 30% 10px 30%",color:"#FFFFFF",fontSize:"49px"}}>
                   Roadmap
               </h2>
-              <p style={{color:"#FFFFFF",display:"flex",justifyContent:"center"}}>
+              <p style={{color:"#FFFFFF",display:"flex",justifyContent:"center", width:"90%", textAlign:"center"}}>
                   Mon parcours de formation de développeur Web
               </p>
           </Box>
       </FlexBetween>
-          <Box sx={{position:"relative", height:"1390px", marginBottom:"0px", }}>
-          <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{position:"relative", zIndex:"0", top:"0.3%", width:"100%", height:"100%"}}/>
-              <FlexBetween className="box__img" sx={{justifyContent:"center",position:"absolute",zIndex:"4",left:"40.5%",top:"5%"}}>
-                  <Box className="ellipse">
+        <Box sx={{position:"relative", height:"1400px", marginBottom:"0px", display:"flex", flexDirection:"column" }}>
+          <Box sx={{display:"flex", height:"1390px"}}>
+          <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{position:"relative" ,zIndex:"0", width:"100%", height:"100%"}}/>
+          <FlexBetween className="box__img" sx={{justifyContent:"center",width:"100%", position:"absolute",zIndex:"4", bottom:"90%"}}>
+                  <Box>
                       <Link to="https://openclassrooms.com/fr/" style={{width:"86px",height:"86px"}}>
                           <img src={openclassrooms} alt="logo openclassrooms" style={{height:"86px",justifyContent:"center",borderRadius:"50%"}}/>
                       </Link>
@@ -382,8 +381,7 @@ const Roadmap = ({data}) => {
               objectFit: "cover"
               }} />
           </div>
-          <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4", left:"50%", top:"18.5%"}}>
-            <Box sx={{display:"flex"}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"77%"}}>
               <Link to={data[0].url}>
                   <img 
                   src={booki} 
@@ -396,11 +394,8 @@ const Roadmap = ({data}) => {
                   }}/>
                   </Link>
               </Box>
-          </FlexBetween>
-          <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4",left:"50%", top:"32%"}}>
-          <Box sx={{display:"flex"}}>
-            <Link href={data[1].url} style={{width:"100%",
-                  height:"100%",}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"64%"}}>
+            <Link href={data[1].url}>
                 <img 
                 src={ohmyfood} 
                 alt={data[1].title} 
@@ -412,11 +407,8 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-          </FlexBetween>
-          <FlexBetween className="box__img" sx={{ flexDirection:"column", justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4",left:"50%", top:"46.5%"}}>
-          <Box sx={{display:"flex"}}>
-            <Link to={data[2].url} style={{width:"100%",
-                  height:"100%",}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"51%"}}>
+            <Link to={data[2].url}>
                 <img 
                 src={panthere} 
                 alt={data[2].title} 
@@ -428,11 +420,8 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-          </FlexBetween>
-          <FlexBetween className="box__img" sx={{ flexDirection:"column",justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4",left:"50%", top:"61%"}}>
-          <Box sx={{display:"flex"}}>
-              <Link to={data[3].url} style={{width:"100%",
-                    height:"100%",}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"38%"}}>
+              <Link to={data[3].url}>
                   <img 
                   src={kanap} 
                   alt={data[3].title} 
@@ -444,11 +433,8 @@ const Roadmap = ({data}) => {
                   }}/>
                   </Link>
               </Box>
-          </FlexBetween>
-          <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4",left:"50%", top:"75.5%"}}>
-          <Box sx={{display:"flex"}}>
-            <Link to={data[4].url} style={{width:"100%",
-                  height:"100%",}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"25%"}}>
+            <Link to={data[4].url}>
                 <img 
                 src={hottakes} 
                 alt={data[4].title} 
@@ -460,11 +446,8 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-          </FlexBetween>
-          <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"20%", height:"120px", position:"absolute", zIndex:"4",left:"41%", top:"86%"}}>
-          <Box sx={{display:"flex"}}>
-            <Link to={data[5].url} target="_blank" style={{width:"100%",
-                  height:"100%",}}>
+            <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"12%"}}>
+            <Link to={data[5].url} target="_blank">
                 <img 
                 src={kasa} 
                 alt={data[5].title} 
@@ -476,16 +459,16 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-          </FlexBetween>
           <img src={planetpurple} alt="planet purple" style={{
                   position:"absolute",
                   left:"67%",
                   bottom:"25%",
                   width:"28%",
                   height:"8%"
-                }}/>   
+                }}/>
+                </Box>   
           </Box>
-    </div>
+    </Box>
   )}
   {/* Tablet Device */}
   {isTabletScreens && (
