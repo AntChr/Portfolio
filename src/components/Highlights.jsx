@@ -4,7 +4,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import bordure from "../images/Asset 1.png"
 
 const Highlights = ({data}) => {  
-  const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
 
   const [currentImageIndex, setCurrentImageIndex] = useState(-1);
 
@@ -19,7 +21,7 @@ const Highlights = ({data}) => {
   return (
     <>
           {/* Desktop Device */}
-          {isNonMobileScreens && (
+          {isDesktopScreens && (
     <Box className="Highlights" sx={{
       display:"flex",
       flexDirection:"column",
@@ -109,8 +111,9 @@ const Highlights = ({data}) => {
           </div>
       </Box>
           )}
+
           {/* Mobile Device */}
-          {!isNonMobileScreens && (
+          {isMobileScreens && (
       <Box className="Highlights" sx={{
         display:"flex",
         flexDirection:"column",
@@ -196,6 +199,96 @@ const Highlights = ({data}) => {
           ))}
         </Box>
         </Box>
+      </Box>
+          )}
+
+  {isTabletScreens && (
+    <Box className="Highlights" sx={{
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      height:"100%",
+      width:"100%",
+      backgroundColor:"#0A0019",
+      position:"relative"
+    }}>
+
+
+      <Box sx={{
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
+        height:"70%",
+        width:"100%"
+      }}>      
+      <Typography variant='h2' style={{color:"#8E8ed4", textAlign:"center", height:"20%", marginBottom:"30px"}}>
+        Highlights
+      </Typography>
+      <Box sx={{
+        display:'flex',
+        justifyContent:"center",
+        flexWrap:"wrap",
+        width:"80%",
+        height:"60%",
+      }}>
+        {data.map((item, index) => (
+          <Box 
+            key={index}
+            className={`box__${index} ${currentImageIndex === index
+              ? "highlight-active"
+              : currentImageIndex === -1
+              ? "highlight"
+              : "highlight-inactive"}`}
+            sx={{
+              boxSizing: 'border-box',
+              position: 'relative',
+              zIndex: currentImageIndex === index ? 1 : 0,
+              cursor:"pointer",
+              margin:"9px"
+            }}
+            onClick={() => handleImageClick(index)}
+          >
+            <img className="highlights__img"
+              src={item.image}
+              alt={item.title} 
+              style={{
+                width:'100%',
+                height:'100%',
+                objectFit:'cover'
+              }}
+            />
+            {currentImageIndex === index && (
+              <Box>
+                <Box sx={{
+                  position: "absolute",
+                  top:"2%",
+                  right:'1%',
+                }}>
+                  <button className='highlights__btn'
+                    onMouseDown={handleCloseClick} style={{ color:"#000000", backgroundColor:"transparent", border:"2px solid #000000", borderRadius:"20px", cursor:"pointer"}}
+                  >
+                    <CloseIcon />
+                  </button>
+                </Box>
+                <Box sx={{
+                  backgroundColor:"transparent",
+                  width: '100%',
+                  padding: '8px'
+                }}>
+                  <p style={{ display:"flex", color:"#FFFFFF", fontSize:"24px",fontWeight:"bold", WebkitTextStroke: "1px #FFFFFF" }}>
+                    {item.text}
+                  </p>
+                </Box>
+              </Box>
+            )}
+          </Box>
+        ))}
+          </Box>
+        </Box>
+        <div style={{position:"absolute", top:"99%",left:"0", zIndex:"2"}}>
+            <img src={bordure} alt="bordure" style={{width:"100%"}}/>
+          </div>
       </Box>
           )}
     </>

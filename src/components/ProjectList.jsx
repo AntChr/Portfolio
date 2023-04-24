@@ -4,7 +4,9 @@ import { Box, Typography, useMediaQuery } from '@mui/material'
 
 
 const ProjectList = ({data}) => {
-  const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
 
   const signal = () => {
     if(data.statut === "Terminé") {
@@ -19,7 +21,7 @@ const ProjectList = ({data}) => {
     <FlexBetween sx={{ flexDirection:"column"}}>
 
     {/* Desktop Device */}
-    {isNonMobileScreens && (
+    {isDesktopScreens && (
     <Box sx={{ display:"flex", alignItems:"center", width:"100%", marginBottom:"20px"}}>
       <Box>
         <a href={data.url} target="_blank">
@@ -48,7 +50,7 @@ const ProjectList = ({data}) => {
     )}
     
     {/* Mobile Device */}
-    {!isNonMobileScreens && (
+    {isMobileScreens && (
       <Box sx={{ display:"flex", flexDirection:"column", alignItems:"center", width:"auto", marginBottom:"20px"}}>
         <Box sx={{marginBottom:"10px"}}>
           <a href={data.url} target="_blank">
@@ -73,6 +75,37 @@ const ProjectList = ({data}) => {
         <Box sx={{width:"100%", textAlign:"center"}}>
           <p style={{color:"#000000"}}>{data.description}</p>
         </Box>
+    </Box>
+    )}
+        {/* Tablet Device */}
+        {isTabletScreens && (
+    <Box sx={{ display:"flex", flexDirection:"column", alignItems:"center", width:"100%", marginBottom:"20px"}}>
+      <Box sx={{display:"flex", width:"100%"}}>
+        <Box sx={{width:"20%", height:"152px"}}>
+          <a href={data.url} target="_blank">
+            <img src={data.image} alt={data.title} style={{
+            width:"100%",
+            height:"100%",
+            justifyContent:"center",
+            borderRadius:"50%",
+            objectFit:"contain",
+            }}/>
+          </a>
+        </Box>
+        <Box sx={{width:"25%", margin:"auto", textAlign:"center"}}>
+          <Typography variant='h2' sx={{fontSize:"19px",  color:"#000000", fontWeight:"bolder"}}>{data.title}</Typography>
+        </Box>
+        <Box sx={{width:"25%", margin:"auto", textAlign:"center"}}>
+          <Typography variant="subtitle1" style={{ color:"#000000", fontWeight:"bolder"}}>{data.langage}</Typography>
+        </Box>
+        <Box sx={{ width:"25%", margin:"auto", textAlign:"center"}}>
+          <div style={{display:"flex", justifyContent:"center", alignItems:"center", textAlign:"start" }}>{signal()}<p style={{width:"100%", color:"#000000", fontWeight:"bolder"}}>{data.statut}</p></div>
+        </Box>
+      </Box>
+      <Box sx={{width:"100%", textAlign:"center"}}>
+        <p style={{color:"#000000", fontWeight:"bolder"}} >{data.description}</p>
+      </Box>
+      <div style={{width:"20%", backgroundColor:"#FFFFFF", height:"2px", marginTop:"20px"}}></div>
     </Box>
     )}
   </FlexBetween>

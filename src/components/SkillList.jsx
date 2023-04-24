@@ -1,6 +1,8 @@
 import FlexBetween from './FlexBetween';
 import { useState } from 'react';
 import { Box, Typography, useMediaQuery } from '@mui/material';
+import plus from "../images/plus.png"
+import moins from "../images/moins.png"
 
 const SkillList = ({data, addToCart, removeFromCart}) => {
   const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
@@ -53,18 +55,12 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
               bottom:"292px",
               left:"228px" }}>
             <button onClick={handleRemoveFromCartClick} style={{
-            color:"#000000",
-            width:"45px",
-            height:"45px",
-            backgroundColor:"transparent",
-            display:"flex",
-            alignItems:"center",
-            paddingLeft:"12px",
-            border:"2px solid #000000",
-            borderRadius:"50%",
-            fontSize:"50px",
-            cursor:"pointer",
-            }}>-</button>
+              backgroundColor:"transparent",
+              border:"none",
+              width:"55px",
+              height:"45px",
+              cursor:"pointer",
+           }}><img src={moins} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
             </Box>
           ) : (  
             <Box sx={{
@@ -72,15 +68,12 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             bottom:"292px",
             left:"228px"}}>
           <button onClick={handleAddToCartClick} style={{
-            color:"#000000",
-            width:"45px",
-            height:"45px",
             backgroundColor:"transparent",
-            border:"2px solid #000000",
-            borderRadius:"50%",
-            fontSize:"40px",
+            border:"none",
+            width:"55px",
+            height:"45px",
             cursor:"pointer",
-             }}>+</button>
+             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
             </Box>
           )
           )} 
@@ -105,36 +98,31 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
         {data.add && (
             isAddedToCart ? (
             <button onClick={handleRemoveFromCartClick} style={{
-            color:"#000000",
             backgroundColor:"transparent",
             display:"flex",
             position:"relative",
             bottom:"92%",
             left:"78%",
-            width:"45px",
+            width:"55px",
             height:"45px", 
             alignItems:"center",
-            paddingLeft:"12px",
-            border:"2px solid #000000",
+            border:"none",
             borderRadius:"50%",
-            fontSize:"50px",
             cursor:"pointer",
-            }}>-</button>
+            }}><img src={moins} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
           ) : (  
           <button onClick={handleAddToCartClick} style={{
-            color:"#000000",
             position:"relative",
             bottom:"92%",
             left:"78%",
-            width:"45px",
+            width:"55px",
+            border:"none",
             height:"45px",
             marginLeft:"0px", 
             backgroundColor:"transparent",
-            border:"2px solid #000000",
             borderRadius:"50%",
-            fontSize:"40px",
             cursor:"pointer",
-             }}>+</button>
+             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
           )
         )} 
         </Box>

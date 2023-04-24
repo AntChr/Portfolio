@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 
 const Welcome = () => {
 
-    const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
+    const isDesktopScreens = useMediaQuery("(min-width: 992px)")
+    const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
+    const isMobileScreens = useMediaQuery("(max-width: 768px)")
     const [isDelayed, setIsDelayed] = useState(false);
     const [isDelayed2, setIsDelayed2] = useState(false);
 
@@ -39,7 +41,7 @@ const Welcome = () => {
         </div>
         <div className={shootingStarClassName2}>
         </div>
-        {isNonMobileScreens && ( 
+        {isDesktopScreens && ( 
         <Box sx={{
             display:"flex",
             alignItems:"center",
@@ -65,12 +67,12 @@ const Welcome = () => {
           fontSize:"22px",
           color:"#FFFFFF"
         }}>
-          Voici mon portfolio qui reprend mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir mon monde en défilant vers le bas.
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
         </p>
         </Box>
         )}
 
-        {!isNonMobileScreens && ( 
+        {isMobileScreens && ( 
         <Box sx={{
             display:"flex",
             flexDirection:"column",
@@ -97,7 +99,40 @@ const Welcome = () => {
           fontSize:"16px",
           color:"#FFFFFF"
         }}>
-          Voici mon portfolio qui reprend mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir mon monde en défilant vers le bas.
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
+        </p>
+        </Box>
+        )}
+
+      {isTabletScreens && ( 
+        <Box sx={{
+            display:"flex",
+            flexDirection:"column",
+            alignItems:"center",
+            margin:"auto",
+            padding:"0px 20px 0px 20px"
+        }}>
+        <Typography variant='h1' sx={{
+          display:"flex",
+          justifyContent:"center",
+          width:"100%",
+          fontSize:"60px",
+          color:"#FFFFFF",
+          marginBottom:"15px"
+        }}>
+          Bienvenue
+        </Typography>
+        <p style={{
+          display:"flex",
+          width:"80%",
+          height:"81px",
+          justifyContent:"center",
+          alignItems:"center",
+          textAlign:"center",
+          fontSize:"22px",
+          color:"#FFFFFF"
+        }}>
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
         </p>
         </Box>
         )}

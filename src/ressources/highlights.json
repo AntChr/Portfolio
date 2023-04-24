@@ -2,37 +2,37 @@
     {
         "title":"Histoire",
         "image":"./Highlights/Etudes.png",
-        "text":"Après l'obtention de mon BAC S, je me suis orienté vers une prépa scientifique qui m'a permis d'entrer dans une école ingénieur généraliste l'EIGSI. Dans celle-ci j'ai choisi la spécialité énergie bâtiment car j'étais assez à l'aise dans les cours de thermodynamique",
+        "text":"Après l'obtention de mon BAC S, je me suis orienté vers une prépa scientifique puis vers une école d'ingénieur. Intéressé par les cours de thermodynamique, je me suis spécialisé dans la branche 'énergie bâtiment'.",
         "expanded": false
     },
     {
         "title":"Audit énergétique",
         "image":"./Highlights/Audit.png",
-        "text":"Suite à mon stage de fin d'études d'école d'ingénieur je suis rentré dans un bureau d'études thermique Enera Conseil où j'ai réalisé de multiple audit énergetique de copropriété et fais des calculs thermique RT2012. Cependant par manque de projets j'ai fait une rupture de contrat conventionnel avec ce bureau d'études",
+        "text":"Suite à mon stage de fin d'études d'école d'ingénieur, j'ai intégré le bureau d'étude thermique Enera Conseil. Calculs thermique RT2012 et audit énergétique étaient mon quotidien.",
         "expanded": false
     },
     {
         "title":"Bâtiment Passif",
         "image":"./Highlights/LMdP.png",
-        "text":" Lors de mes recherches j'ai trouve et intégré la maison du passif en tant qu'ingénieur projets ou j'ai principalement labellisés des bâtiments passifs, je suis aussi devenu formateur du module 4 de la formation CEPH (concepteur européen PassivHaus) et j'ai gérer l'organisation d'examens en ligne",
+        "text":"Souhaitant enrichir mes compétences et être plus en phase avec mes valeurs j'ai intégré 'la maison du passif'. Outre la labellisation de bâtiment j'ai pu former de nombreux professionnels au concept passif ( CEPH concepteur européen Passiv Haus) et en assurant notamment l'organisation d'examen en ligne.",
         "expanded": false
     },
     {
         "title":"Qualité",
         "image":"./Highlights/Qualités.png",
-        "text":"De part mon expérience et mon histoire de vie j'ai observé plusieurs qualités dans mon profil. Je suis autonome dans mon travail et dans ma gestion du temps, je suis une personne équilibré ce qui me permet d'être à l'écoute de mes collègues ou de critiques constructives. Enfin je suis persévérant dans ce que j'entreprends, si il y a un problème je vais y réfléchir tant que je n'ai pas trouvé la solution ",
+        "text":"Mon parcours tant personnel que professionnel a fait ressortir des compétences telles que : autonomie, qualité d'écoute, persevérance, esprit d'équipe, patience et transparence.",
         "expanded": false
     },
     {
         "title":"Centres d'intérêt",
         "image":"./Highlights/Centres interets.png",
-        "text":"Passionné par les jeux en tout genre, j'ai pratiqué pendant 6 ans du Handball et pendant 5 ans du Volleyball niveau départemental. J'ai aussi à mon actif plus d'une vingtaine d'escape game réalisé avec succès et je joue régulièrement à des jeux multijoueurs. Enfin quand j'ai du temps je lis des livres fantastiques, la dernière suite de livre que j'ai terminé est La Roue du temps de Robet Jordan",
+        "text":"Passionné par les jeux en tout genre, j'ai pratiqué pendant 6 ans du Handball et pendant 5 ans du Volleyball niveau départemental. J'ai aussi à mon actif plus d'une vingtaine d'escape game réalisés avec succès et je joue régulièrement à des jeux multijoueurs. Enfin, je lis des livres fantastiques (l'intégralité de la Roue du temps de R.Jordan)",
         "expanded": false
     },
     {
         "title":"Reconversion",
         "image":"./Highlights/developpement.png",
-        "text":"Au cours de toutes ces années d'expériences et de vie je me suis décourvert une passion pour l'informatique et notamment le développement web",
+        "text":"Au cours de toutes ces années d'expériences et de vie, je me suis pris de passion pour l'informatique et notamment le développement web",
         "expanded": false
     }
 
