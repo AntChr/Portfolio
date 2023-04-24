@@ -109,6 +109,7 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             border:"none",
             borderRadius:"50%",
             cursor:"pointer",
+            padding:"0px",
             }}><img src={moins} alt="moins" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
           ) : (  
           <button onClick={handleAddToCartClick} style={{
