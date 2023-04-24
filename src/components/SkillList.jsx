@@ -109,20 +109,21 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
             border:"none",
             borderRadius:"50%",
             cursor:"pointer",
-            }}><img src={moins} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+            }}><img src={moins} alt="moins" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
           ) : (  
           <button onClick={handleAddToCartClick} style={{
             position:"relative",
             bottom:"92%",
             left:"78%",
-            width:"60px",
+            width:"55px",
             border:"none",
             height:"50px",
             marginLeft:"0px", 
             backgroundColor:"transparent",
             borderRadius:"50%",
             cursor:"pointer",
-             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+            padding:"0px",
+             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%"}}/></button>
           )
         )} 
         </Box>
