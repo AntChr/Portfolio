@@ -23,9 +23,9 @@ import mobilebgroadmap from "../images/Bg_roadmap.png"
 
 
 const Roadmap = ({data}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
-  const isMobileScreens = useMediaQuery("(max-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
+  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const textRefs = useRef([]);
@@ -89,7 +89,7 @@ const Roadmap = ({data}) => {
     {/* Desktop Device */}
     {isDesktopScreens && (
     <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", boxSizing:"border-box"}}>
-      <img src={road} alt="Road" style={{ width:"62.5%", height:"76%", position:"absolute", zIndex:"3", top:"calc(100vh * 0.70)", left:"19%", opacity:"85%"}}/>
+      <img src={road} alt="Road" style={{ width:"62.5%", height:"76%", position:"absolute", zIndex:"3", top:"75vh", left:"19%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
               <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",color:"#FFFFFF",fontSize:"69px"}}>
@@ -100,9 +100,7 @@ const Roadmap = ({data}) => {
               </p>
           </Box>
       </FlexBetween>
-      <div style={{position:"absolute", top:"calc(100vh * 1)", zIndex:"4", width:"100%"}}>
-            <img src={bordure} alt="bordure" style={{width:"100%", height:"180px"}}/>
-          </div>
+      <img src={bordure} alt="bordure" style={{position:"absolute", top:"100vh", zIndex:"4", width:"100%", height:"180px"}}/>
           <Box sx={{position:"relative"}}>
           <img src={bgroadmap} alt="arrière plan roadmap" style={{position:"relative", top:"5px", zIndex:"0", width:"100%"}}/>
               <FlexBetween className="box__img" sx={{justifyContent:"center",position:"absolute",zIndex:"4",left:"44.8%",top:"5%"}}>
@@ -397,7 +395,7 @@ const Roadmap = ({data}) => {
   {/* Mobile Device */}
   {isMobileScreens && (
     <Box className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
-          <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
+      <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
       <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"100%", left:"48%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
@@ -531,9 +529,6 @@ const Roadmap = ({data}) => {
   {/* Tablet Device */}
   {isTabletScreens && (
     <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
-      <div style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4"}}>
-          <img src={bordure} alt="bordure" style={{width:"100%"}}/>
-      </div>
       <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"110%", left:"49%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
@@ -545,7 +540,8 @@ const Roadmap = ({data}) => {
               </p>
           </Box>
       </FlexBetween>
-          <Box sx={{position:"relative", height:"1390px", marginBottom:"0px", display:"flex", flexDirection:"column" }}>
+      <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
+          <Box sx={{position:"relative", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
           <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{position:"relative", zIndex:"0", top:"0.3%", width:"100%", height:"100%"}}/>
               <FlexBetween className="box__img" sx={{justifyContent:"center",position:"relative",zIndex:"4", bottom:"90%"}}>
                   <Box>
@@ -574,8 +570,8 @@ const Roadmap = ({data}) => {
               objectFit: "cover"
               }} />
           </div>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"85%"}}>
-            <Box sx={{width:"15%", paddingLeft:"31%" }}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"83%"}}>
+            <Box sx={{width:"16%", paddingLeft:"31%" }}>
               <Link to={data[0].url}>
                   <img 
                   src={booki} 
@@ -611,7 +607,7 @@ const Roadmap = ({data}) => {
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].langage}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].description}</Typography>
                 </Box>
-              <Box sx={{ width:"46%", paddingLeft:"5%"}}>
+              <Box sx={{ width:"47.1%", paddingLeft:"5%"}}>
             <Link href={data[1].url}>
                 <img 
                 src={ohmyfood} 
@@ -626,7 +622,7 @@ const Roadmap = ({data}) => {
                 </Box>
           </Box>
           <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"80%"}}>
-            <Box sx={{width:"14.8%", paddingLeft:"31%" }}>
+            <Box sx={{width:"15.6%", paddingLeft:"31%" }}>
             <Link to={data[2].url} style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -647,7 +643,7 @@ const Roadmap = ({data}) => {
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].description}</Typography>
                 </Box>
           </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"78%"}}>
+          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"76%"}}>
               <Box className="text__box__r"sx={{
                   display:"flex",
                   flexDirection:"column",
@@ -663,7 +659,7 @@ const Roadmap = ({data}) => {
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].langage}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].description}</Typography>
                 </Box>
-              <Box sx={{ width:"46%", paddingLeft:"5%"}}>
+              <Box sx={{ width:"47.2%", paddingLeft:"5%"}}>
               <Link to={data[3].url} style={{width:"100%",
                     height:"100%",}}>
                   <img 
@@ -679,7 +675,7 @@ const Roadmap = ({data}) => {
                   </Box>
           </Box>
           <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"75%"}}>
-            <Box sx={{width:"14.8%", paddingLeft:"31%" }}>
+            <Box sx={{width:"15.6%", paddingLeft:"31%" }}>
             <Link to={data[4].url} style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -716,7 +712,7 @@ const Roadmap = ({data}) => {
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].langage}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].description}</Typography>
                 </Box>
-              <Box sx={{ width:"46%", paddingLeft:"5%"}}>
+              <Box sx={{ width:"47.2%", paddingLeft:"5%"}}>
             <Link to={data[5].url} target="_blank" style={{width:"100%",
                   height:"100%",}}>
                 <img 
@@ -735,7 +731,7 @@ const Roadmap = ({data}) => {
                   position:"absolute",
                   left:"67%",
                   bottom:"28%",
-                  width:"17%",
+                  width:"14%",
                   height:"7%"
                 }}/>   
           </Box>

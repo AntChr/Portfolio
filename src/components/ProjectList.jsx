@@ -4,9 +4,9 @@ import { Box, Typography, useMediaQuery } from '@mui/material'
 
 
 const ProjectList = ({data}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
-  const isMobileScreens = useMediaQuery("(max-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1025px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
+  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
 
   const signal = () => {
     if(data.statut === "Terminé") {

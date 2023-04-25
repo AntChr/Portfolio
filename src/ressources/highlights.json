@@ -8,19 +8,19 @@
     {
         "title":"Audit énergétique",
         "image":"./Highlights/Audit.png",
-        "text":"Suite à mon stage de fin d'études d'école d'ingénieur, j'ai intégré le bureau d'étude thermique Enera Conseil. Calculs thermique RT2012 et audit énergétique étaient mon quotidien.",
+        "text":"Suite à mon stage de fin d'études d'école d'ingénieur, j'ai intégré le bureau d'étude thermique Enera Conseil. Calculs thermiques RT2012 et audits énergétiques étaient mon quotidien.",
         "expanded": false
     },
     {
         "title":"Bâtiment Passif",
         "image":"./Highlights/LMdP.png",
-        "text":"Souhaitant enrichir mes compétences et être plus en phase avec mes valeurs j'ai intégré 'la maison du passif'. Outre la labellisation de bâtiment j'ai pu former de nombreux professionnels au concept passif ( CEPH concepteur européen Passiv Haus) et en assurant notamment l'organisation d'examen en ligne.",
+        "text":"Souhaitant enrichir mes compétences et être plus en phase avec mes valeurs, j'ai intégré 'la maison du passif'. Outre la labellisation de bâtiment j'ai pu former de nombreux professionnels au concept passif ( CEPH concepteur européen Passiv Haus) et assurer notamment l'organisation d'examen en ligne.",
         "expanded": false
     },
     {
         "title":"Qualité",
         "image":"./Highlights/Qualités.png",
-        "text":"Mon parcours tant personnel que professionnel a fait ressortir des compétences telles que : autonomie, qualité d'écoute, persevérance, esprit d'équipe, patience et transparence.",
+        "text":"Mon parcours tant personnel que professionnel a révélé des compétences telles que : autonomie, qualité d'écoute, persevérance, esprit d'équipe, patience et transparence.",
         "expanded": false
     },
     {
@@ -32,9 +32,7 @@
     {
         "title":"Reconversion",
         "image":"./Highlights/developpement.png",
-        "text":"Au cours de toutes ces années d'expériences et de vie, je me suis pris de passion pour l'informatique et notamment le développement web",
+        "text":"Au cours de toutes ces années d'expériences et de vie, je me suis pris de passion pour l'informatique et notamment le développement web.",
         "expanded": false
     }
-
-
 ]

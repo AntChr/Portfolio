@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 
 const Welcome = () => {
 
-    const isDesktopScreens = useMediaQuery("(min-width: 992px)")
-    const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
-    const isMobileScreens = useMediaQuery("(max-width: 768px)")
+    const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
+    const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
+    const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
     const [isDelayed, setIsDelayed] = useState(false);
     const [isDelayed2, setIsDelayed2] = useState(false);
 
@@ -67,7 +67,7 @@ const Welcome = () => {
           fontSize:"22px",
           color:"#FFFFFF"
         }}>
-          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse le découvrir en défilant vers le bas.
         </p>
         </Box>
         )}
@@ -99,7 +99,7 @@ const Welcome = () => {
           fontSize:"16px",
           color:"#FFFFFF"
         }}>
-          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse le découvrir en défilant vers le bas.
         </p>
         </Box>
         )}
@@ -132,7 +132,7 @@ const Welcome = () => {
           fontSize:"22px",
           color:"#FFFFFF"
         }}>
-          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse découvrir en défilant vers le bas.
+          Un portfolio pour vous présenter mon histoire, ma reconversion et mes réalisations en tant que développeur front-end. Je vous laisse le découvrir en défilant vers le bas.
         </p>
         </Box>
         )}

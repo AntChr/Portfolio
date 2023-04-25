@@ -157,13 +157,14 @@ html {
   background-image: url(../src/images/Bg_roadmap.png);
   background-size: auto auto;
   background-repeat: no-repeat;
-  height: 6716px;
+  height: 100%;
   z-index: 1
 }
 
 .Roadmap__title {
   background-image: url(../src/images/WEBSITE/WHALE.png);
   background-size: cover;
+  height: auto;
   z-index: 1;
 }
 
@@ -366,7 +367,7 @@ textarea::placeholder {
 	}
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767.9px) {
   
   .ellipse{
     width: 162px;

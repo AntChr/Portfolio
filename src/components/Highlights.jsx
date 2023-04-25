@@ -4,9 +4,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import bordure from "../images/Asset 1.png"
 
 const Highlights = ({data}) => {  
-  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
-  const isMobileScreens = useMediaQuery("(max-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
+  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
 
   const [currentImageIndex, setCurrentImageIndex] = useState(-1);
 
@@ -115,9 +115,6 @@ const Highlights = ({data}) => {
           {/* Mobile Device */}
           {isMobileScreens && (
       <Box className="Highlights" sx={{
-        display:"flex",
-        flexDirection:"column",
-        justifyContent:"center",
         height:"1350px",
         width:"100%",
         backgroundColor:"#0A0019"
@@ -127,10 +124,10 @@ const Highlights = ({data}) => {
           flexDirection:"column",
           justifyContent:"center",
           alignItems:"center",
-          height:"80%",
+          height:"100%",
           width:"100%"
         }}>      
-        <Typography variant='h2' style={{color:"#8E8ed4", textAlign:"center", height:"auto", marginBottom:"80px"}}>
+        <Typography variant='h2' style={{color:"#8E8ed4", textAlign:"center", height:"auto", marginBottom:"10px"}}>
           Highlights
         </Typography>
         <Box sx={{
@@ -204,22 +201,17 @@ const Highlights = ({data}) => {
 
   {isTabletScreens && (
     <Box className="Highlights" sx={{
-      display:"flex",
-      flexDirection:"column",
-      justifyContent:"center",
       height:"100%",
       width:"100%",
       backgroundColor:"#0A0019",
       position:"relative"
     }}>
-
-
       <Box sx={{
         display:"flex",
         flexDirection:"column",
         justifyContent:"center",
         alignItems:"center",
-        height:"70%",
+        height:"75%",
         width:"100%"
       }}>      
       <Typography variant='h2' style={{color:"#8E8ed4", textAlign:"center", height:"20%", marginBottom:"30px"}}>
@@ -230,7 +222,7 @@ const Highlights = ({data}) => {
         justifyContent:"center",
         flexWrap:"wrap",
         width:"80%",
-        height:"60%",
+        height:"70%",
       }}>
         {data.map((item, index) => (
           <Box 
@@ -286,9 +278,7 @@ const Highlights = ({data}) => {
         ))}
           </Box>
         </Box>
-        <div style={{position:"absolute", top:"99%",left:"0", zIndex:"2"}}>
-            <img src={bordure} alt="bordure" style={{width:"100%"}}/>
-          </div>
+            <img src={bordure} alt="bordure" style={{position:"absolute", top:"99%",left:"0", zIndex:"2",width:"100%"}}/>
       </Box>
           )}
     </>

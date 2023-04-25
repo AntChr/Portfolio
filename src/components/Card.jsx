@@ -5,9 +5,9 @@ import { CartContext } from './CartContext';
 
 
 const Card = ({data, DefaultTotal = 14000}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
-  const isMobileScreens = useMediaQuery("(max-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
+  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
   const { panier, setPanier } = useContext(CartContext);  
   const [deftotal,setTotal] = useState(DefaultTotal)
   
