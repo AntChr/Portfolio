@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { useState, useEffect, useRef } from 'react'
 import FlexBetween from './FlexBetween'
 import { Box, Typography, useMediaQuery } from '@mui/material'
 import openclassrooms from "../images/Logo+strokes/OCR.png"
@@ -25,6 +26,63 @@ const Roadmap = ({data}) => {
   const isDesktopScreens = useMediaQuery("(min-width: 992px)")
   const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
   const isMobileScreens = useMediaQuery("(max-width: 768px)")
+
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const textRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+  
+    const handleIntersection = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+  
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    const textElements = document.querySelectorAll('.text__box__r');
+  
+    textElements.forEach(element => {
+      observer.observe(element);
+    });
+  
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+  
+    const handleIntersection = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+  
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    const textElements = document.querySelectorAll('.text__box__l');
+  
+    textElements.forEach(element => {
+      observer.observe(element);
+    });
+  
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <>
@@ -79,7 +137,7 @@ const Roadmap = ({data}) => {
           </div>
           <FlexBetween className="box__img" sx={{flexDirection:"column", justifyContent:"center", width:"30%", position:"absolute", zIndex:"4", right:"6.8%", top:"19%"}}>
             <Box sx={{display:"flex"}}>
-            <Box className="text__box" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"100%", height:"100%" }}>
+            <Box className="text__box__r" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"100%", height:"100%" }}>
                   <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[0].title}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].langage}</Typography>
@@ -131,7 +189,7 @@ const Roadmap = ({data}) => {
               }}/>
               </div>
                 </Box>
-                <Box className="text__box"sx={{
+                <Box className="text__box__l"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -150,7 +208,7 @@ const Roadmap = ({data}) => {
           </FlexBetween>
           <FlexBetween className="box__img" sx={{ flexDirection:"column", width:"30%", position:"absolute", zIndex:"4",right:"6.8%", top:"38%"}}>
           <Box sx={{display:"flex"}}>
-          <Box className="text__box"sx={{
+          <Box className="text__box__r" sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -220,7 +278,7 @@ const Roadmap = ({data}) => {
               }}/>
               </div>
                 </Box>
-                <Box className="text__box"sx={{
+                <Box className="text__box__l"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -239,7 +297,7 @@ const Roadmap = ({data}) => {
           </FlexBetween>
           <FlexBetween className="box__img" sx={{flexDirection:"column", width:"30%", position:"absolute", zIndex:"4",right:"6.8%", top:"56.5%"}}>
           <Box sx={{display:"flex"}}>
-          <Box className="text__box"sx={{
+          <Box className="text__box__r"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -308,7 +366,7 @@ const Roadmap = ({data}) => {
               }}/>
               </div>
                 </Box>
-              <Box className="text__box"sx={{
+              <Box className="text__box__l"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -530,7 +588,7 @@ const Roadmap = ({data}) => {
                   }}/>
                   </Link>
               </Box>
-              <Box className="text__box" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
+              <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
                   <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[0].title}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].langage}</Typography>
@@ -538,7 +596,7 @@ const Roadmap = ({data}) => {
                 </Box>
           </Box>
           <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"83%"}}>
-              <Box className="text__box"sx={{
+              <Box className="text__box__r"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -582,7 +640,7 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
                 </Box>
-                <Box className="text__box" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
+                <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
                   <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[2].title}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[2].projetnumber}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].langage}</Typography>
@@ -590,7 +648,7 @@ const Roadmap = ({data}) => {
                 </Box>
           </Box>
           <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"78%"}}>
-              <Box className="text__box"sx={{
+              <Box className="text__box__r"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",
@@ -635,7 +693,7 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-              <Box className="text__box" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
+              <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
                   <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[4].title}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[4].projetnumber}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].langage}</Typography>
@@ -643,7 +701,7 @@ const Roadmap = ({data}) => {
                 </Box>
           </Box>
           <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"75%"}}>
-              <Box className="text__box"sx={{
+              <Box className="text__box__r"sx={{
                   display:"flex",
                   flexDirection:"column",
                   backgroundColor:"#A6C8E8",

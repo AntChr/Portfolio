@@ -9,7 +9,9 @@ import { CartContext } from '../../components/CartContext'
 
 
 const Skills = () => {
-  const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
   const {panier, setPanier}  = useContext(CartContext);  
   const [skillsData, setSkillsData] = useState([])
   const [salaryTotal, setSalaryTotal] = useState(14000)
@@ -39,7 +41,32 @@ const Skills = () => {
     <>
       <Navbar />
       {/* Desktop Device */}
-      {isNonMobileScreens && (
+      {isDesktopScreens && (
+      <Box className="skills">
+        <Box className="skills__title">
+          <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"54px", marginBottom:"109px"}}>Compétences</Typography>
+          </Box>
+        <Box className="skills__body" sx={{ display:"flex", backgroundColor:"#A6C8E8", borderRadius:"0px 78px 0px 0px", width:"95%", height:"auto"}}>
+          <Card data={skillsData} />
+          <Box className="skills__list" sx={{
+                  display:"flex",
+                  flexWrap:"wrap",
+                  width:"100%",
+                  height:"100%",
+                  borderRadius:"25px",
+                  padding:"34px",
+                  maxWidth:"100%"
+          }}>
+            {skillsData.map((skill) => (
+                <SkillList key={skill.id} data={skill} addToCart={() => addcart(skill)} removeFromCart={() => removeFromCart(skill)}/>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+      )}
+
+      {/* Tablet Device */}
+      {isTabletScreens && (
       <Box className="skills">
         <Box className="skills__title">
           <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"54px", marginBottom:"109px"}}>Compétences</Typography>
@@ -49,11 +76,10 @@ const Skills = () => {
           <Box className="skills__list" sx={{
                   display:"flex",
                   flexWrap:"wrap",
-                  width:"100%",
-                  height:"auto",
-                  marginBottom: "24.5px",
+                  width:"50%",
+                  height:"100%",
                   borderRadius:"25px",
-                  padding:"34px 0px 0px 6%"
+                  padding:"34px",
           }}>
             {skillsData.map((skill) => (
                 <SkillList key={skill.id} data={skill} addToCart={() => addcart(skill)} removeFromCart={() => removeFromCart(skill)}/>
@@ -64,7 +90,7 @@ const Skills = () => {
       )}
 
       {/* Mobile Device */}
-      {!isNonMobileScreens && (
+      {isMobileScreens && (
       <Box className="skills" sx={{width:"auto", height:"auto", paddingBottom:"20px", paddingTop:"80px"}}>
         <Box className="skills__title" sx={{display:"flex", alignItems:"center", justifyContent:"center", textAlign:"center"}}>
           <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"34px", margin:"39px"}}>Compétences</Typography>

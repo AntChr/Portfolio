@@ -5,8 +5,9 @@ import plus from "../images/plus.png"
 import moins from "../images/moins.png"
 
 const SkillList = ({data, addToCart, removeFromCart}) => {
-  const isNonMobileScreens = useMediaQuery("(min-width: 768px)")
-  const isTabletScreens = useMediaQuery("(max-width: 992px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 992px)")
+  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 992px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const dots = [];
   for (let i =0; i < data.rating; i++) {
@@ -30,60 +31,109 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
   return (
     <>
     {/* Desktop Device */}
-    {isNonMobileScreens && (
-    <FlexBetween sx={{
+    {isDesktopScreens && (
+    <Box key={data.id} sx={{
       display:"flex",
-      flexWrap:"wrap",
-      width:"316px",
-      margin:"0px 30px 15px 0px",
+      flexDirection:"column",
+      width:"30%",
       height:"316px",
       backgroundColor:"rgba(0, 32, 139, 0.86)",
       borderRadius:"48px 48px 48px 0px",
+      margin:"0px 30px 30px 0px"
       }}>
-
-      <Box key={data.id} sx={{width:"100%", height:"100%"}}>
-        <img src={data.cover} alt={data.title} style={{ width:"100%", height:"80%", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
+        <Box sx={{width:"100%", height:"80%",}}>
+        <img src={data.cover} alt={data.title} style={{ width:"100%", height:"100%", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
+        {data.add && (
+            isAddedToCart ? (
+            <button onClick={handleRemoveFromCartClick} style={{
+              position:"relative",
+              bottom:"95%",
+              left:"79%",
+              backgroundColor:"transparent",
+              border:"none",
+              width:"45px",
+              height:"45px",
+              cursor:"pointer",
+              padding:"0"
+           }}><img src={moins} alt="moins" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+          ) : (  
+          <button onClick={handleAddToCartClick} style={{
+            position:"relative",
+            bottom:"95%",
+            left:"79%",
+            backgroundColor:"transparent",
+            border:"none",
+            width:"45px",
+            height:"45px",
+            cursor:"pointer",
+            padding:"0"
+             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+          )
+          )} 
+          </Box>
         <Box sx={{padding:"5px 0px 0px 21px"}}>
-          <Typography variant="h2" style={{color:"#FFFFFF", fontSize:"19px", marginBottom:"5px"}}>{data.title}</Typography>
+          <Typography variant="h2" style={{color:"#FFFFFF", fontSize:"19px", marginBottom:"5px", height:"auto"}}>{data.title}</Typography>
           <Box sx={{display:"flex"}}>
             {dots}
             {dotsempty}
           </Box>
-          {data.add && (
-            isAddedToCart ? (
-              <Box sx={{position:"relative",
-              bottom:"292px",
-              left:"228px" }}>
-            <button onClick={handleRemoveFromCartClick} style={{
-              backgroundColor:"transparent",
-              border:"none",
-              width:"55px",
-              height:"45px",
-              cursor:"pointer",
-           }}><img src={moins} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
-            </Box>
-          ) : (  
-            <Box sx={{
-            position:"relative",
-            bottom:"292px",
-            left:"228px"}}>
-          <button onClick={handleAddToCartClick} style={{
-            backgroundColor:"transparent",
-            border:"none",
-            width:"55px",
-            height:"45px",
-            cursor:"pointer",
-             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
-            </Box>
-          )
-          )} 
         </Box>
       </Box>
-      </FlexBetween>
       )}
       
+    {/* Tablet Device */}
+    {isTabletScreens && (
+    <Box key={data.id} sx={{
+      display:"flex",
+      flexDirection:"column",
+      width:"100%",
+      height:"316px",
+      backgroundColor:"rgba(0, 32, 139, 0.86)",
+      borderRadius:"48px 48px 48px 0px",
+      margin:"0px 30px 30px 0px"
+      }}>
+        <Box sx={{width:"100%", height:"80%",}}>
+        <img src={data.cover} alt={data.title} style={{ width:"100%", height:"100%", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>
+        {data.add && (
+            isAddedToCart ? (
+            <button onClick={handleRemoveFromCartClick} style={{
+              position:"relative",
+              bottom:"95%",
+              left:"79%",
+              backgroundColor:"transparent",
+              border:"none",
+              width:"45px",
+              height:"45px",
+              cursor:"pointer",
+              padding:"0"
+           }}><img src={moins} alt="moins" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+          ) : (  
+          <button onClick={handleAddToCartClick} style={{
+            position:"relative",
+            bottom:"95%",
+            left:"79%",
+            backgroundColor:"transparent",
+            border:"none",
+            width:"45px",
+            height:"45px",
+            cursor:"pointer",
+            padding:"0"
+             }}><img src={plus} alt="plus" style={{width:"100%", height:"100%", objectFit:"cover"}}/></button>
+          )
+          )} 
+          </Box>
+        <Box sx={{padding:"5px 0px 0px 21px"}}>
+          <Typography variant="h2" style={{color:"#FFFFFF", fontSize:"19px", marginBottom:"5px", height:"auto"}}>{data.title}</Typography>
+          <Box sx={{display:"flex"}}>
+            {dots}
+            {dotsempty}
+          </Box>
+        </Box>
+      </Box>
+      )}
+
       {/* Mobile Device */}
-      {!isNonMobileScreens && (
+      {isMobileScreens && (
         <FlexBetween key={data.id} sx={{
           display:"flex",
           flexDirection:"column",
