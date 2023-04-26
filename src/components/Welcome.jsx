@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 
 const Welcome = () => {
 
-    const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
-    const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
-    const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 769px)")
     const [isDelayed, setIsDelayed] = useState(false);
     const [isDelayed2, setIsDelayed2] = useState(false);
 

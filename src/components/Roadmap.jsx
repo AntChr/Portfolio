@@ -23,9 +23,9 @@ import mobilebgroadmap from "../images/Bg_roadmap.png"
 
 
 const Roadmap = ({data}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
-  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 769px)")
 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const textRefs = useRef([]);
@@ -84,12 +84,38 @@ const Roadmap = ({data}) => {
     };
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+  
+    const handleIntersection = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+  
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    const textElements = document.querySelectorAll('.box__img');
+  
+    textElements.forEach(element => {
+      observer.observe(element);
+    });
+  
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
     {/* Desktop Device */}
     {isDesktopScreens && (
     <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", boxSizing:"border-box"}}>
-      <img src={road} alt="Road" style={{ width:"62.5%", height:"76%", position:"absolute", zIndex:"3", top:"75vh", left:"19%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
               <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",color:"#FFFFFF",fontSize:"69px"}}>
@@ -101,6 +127,7 @@ const Roadmap = ({data}) => {
           </Box>
       </FlexBetween>
       <img src={bordure} alt="bordure" style={{position:"absolute", top:"100vh", zIndex:"4", width:"100%", height:"180px"}}/>
+      <img src={road} alt="Road" style={{ width:"62.5%", height:"76%", position:"absolute", zIndex:"3", top:"9%", left:"19%", opacity:"85%"}}/>
           <Box sx={{position:"relative"}}>
           <img src={bgroadmap} alt="arrière plan roadmap" style={{position:"relative", top:"5px", zIndex:"0", width:"100%"}}/>
               <FlexBetween className="box__img" sx={{justifyContent:"center",position:"absolute",zIndex:"4",left:"44.8%",top:"5%"}}>
@@ -394,67 +421,58 @@ const Roadmap = ({data}) => {
 
   {/* Mobile Device */}
   {isMobileScreens && (
-    <Box className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
-      <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
-      <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"100%", left:"48%", opacity:"85%"}}/>
-      <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
-          <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
-              <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",margin:"30% 30% 10px 30%",color:"#FFFFFF",fontSize:"49px"}}>
-                  Roadmap
-              </h2>
-              <p style={{color:"#FFFFFF",display:"flex",justifyContent:"center", width:"90%", textAlign:"center"}}>
-                  Mon parcours de formation de développeur Web
-              </p>
-          </Box>
-      </FlexBetween>
-        <Box sx={{position:"relative", height:"1400px", marginBottom:"0px", display:"flex", flexDirection:"column" }}>
-          <Box sx={{display:"flex", height:"1390px"}}>
-          <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{position:"relative" ,zIndex:"0", width:"100%", height:"100%"}}/>
-          <FlexBetween className="box__img" sx={{justifyContent:"center",width:"100%", position:"absolute",zIndex:"4", bottom:"90%"}}>
-                  <Box>
-                      <Link to="https://openclassrooms.com/fr/" style={{width:"86px",height:"86px"}}>
-                          <img src={openclassrooms} alt="logo openclassrooms" style={{height:"86px",justifyContent:"center",borderRadius:"50%"}}/>
-                      </Link>
-                  </Box>
-              </FlexBetween>
-          <div className="planet__yellow" style={{
-              position:"absolute",
-              top: "5%",
-              left:"0%",
-              zIndex:"4",
-              width:"22.4%",
-              height:"12.68%",
-              marginRight:"0",
-              overflow:"hidden"
-              }}>
-            <img src={planetyellow} alt="planète jaune" style={{
-              position: "relative",
-              zIndex:"4",
-              top: "0",
-              left: "-100%", 
-              width: "200%",
-              height: "100%",
-              objectFit: "cover"
-              }} />
+    <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
+    <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
+        <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
+            <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",margin:"30% 30% 10px 30%",color:"#FFFFFF",fontSize:"69px"}}>
+                Roadmap
+            </h2>
+            <p style={{color:"#FFFFFF",display:"flex",justifyContent:"center"}}>
+                Mon parcours de formation de développeur Web
+            </p>
+        </Box>
+    </FlexBetween>
+    <div style={{display:"flex", position:"relative", zIndex:"4", height:"90px"}}>
+      <img src={bordure} alt="bordure" style={{width:"100%", height:"100%"}}/>
+    </div>
+        <Box sx={{display:"flex", position:"relative",bottom:"7%", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
+          <div style={{display:"flex",justifyContent:"center", position:"relative", zIndex:"3", width:"auto", padding:"150px 0px 150px 0px"}}>
+            <img src={mobileroad} alt="Road" style={{width:"auto", height:"1100px", opacity:"85%"}}/>
           </div>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"77%"}}>
-              <Link to={data[0].url}>
-                  <img 
-                  src={booki} 
-                  alt={data[0].title} 
-                  style={{
-                    width:"86px",
-                    height:"86px",
-                    justifyContent:"center",
-                    borderRadius:"50%"
-                  }}/>
-                  </Link>
-              </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"64%"}}>
-            <Link href={data[1].url}>
+          <div style={{position:"relative",bottom:"100%", zIndex:"0", width:"auto", height:"1390px"}}>
+            <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{width:"100%", height:"1390px",}}/>
+          </div>
+          <Box sx={{display:"flex",justifyContent:"center", position:"relative", bottom:"200%", height:"100%", width:"100%"}}>     
+        <div className="planet__yellow" style={{
+            position:"absolute",
+            top: "15%",
+            left:"0%",
+            zIndex:"4",
+            width:"75px",
+            height:"150px",
+            marginRight:"0",
+            }}>
+          <img src={planetyellow} alt="planète jaune" style={{
+            position: "relative",
+            zIndex:"4",
+            top: "0",
+            left: "-100%", 
+            width: "200%",
+            height: "100%",
+            objectFit: "cover"
+            }} />
+        </div>
+        <Box className="logo__projet" sx={{display:"flex", flexDirection:"column", justifyContent:"center", height:"100%", width:"10%", paddingTop:"25px"}}>
+            <Box className="box__img" sx={{display:"flex", justifyContent:"center",position:"relative",zIndex:"4", padding:"50px 0px 50px 0px"}}>
+              <Link to="https://openclassrooms.com/fr/" style={{width:"86px",height:"86px"}}>
+                  <img src={openclassrooms} alt="logo openclassrooms" style={{height:"86px",justifyContent:"center",borderRadius:"50%"}}/>
+              </Link>
+            </Box>
+            <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+            <Link to={data[0].url} target="_blank">
                 <img 
-                src={ohmyfood} 
-                alt={data[1].title} 
+                src={booki} 
+                alt={data[0].title} 
                 style={{
                   width:"86px",
                   height:"86px",
@@ -462,9 +480,22 @@ const Roadmap = ({data}) => {
                   borderRadius:"50%"
                 }}/>
                 </Link>
+            </Box>
+            <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+              <Link href={data[1].url} target="_blank">
+              <img 
+              src={ohmyfood} 
+              alt={data[1].title} 
+              style={{
+                width:"86px",
+                height:"86px",
+                justifyContent:"center",
+                borderRadius:"50%"
+              }}/>
+              </Link>
               </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"51%"}}>
-            <Link to={data[2].url}>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link to={data[2].url} target="_blank">
                 <img 
                 src={panthere} 
                 alt={data[2].title} 
@@ -476,21 +507,21 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
               </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"38%"}}>
-              <Link to={data[3].url}>
-                  <img 
-                  src={kanap} 
-                  alt={data[3].title} 
-                  style={{
-                    width:"86px",
-                    height:"86px",
-                    justifyContent:"center",
-                    borderRadius:"50%"
-                  }}/>
-                  </Link>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link to={data[3].url} target="_blank">
+                    <img 
+                    src={kanap} 
+                    alt={data[3].title} 
+                    style={{
+                      width:"86px",
+                      height:"86px",
+                      justifyContent:"center",
+                      borderRadius:"50%"
+                    }}/>
+                    </Link>
               </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"25%"}}>
-            <Link to={data[4].url}>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link to={data[4].url} target="_blank">
                 <img 
                 src={hottakes} 
                 alt={data[4].title} 
@@ -501,9 +532,9 @@ const Roadmap = ({data}) => {
                   borderRadius:"50%"
                 }}/>
                 </Link>
-              </Box>
-            <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"absolute", zIndex:"4", bottom:"12%"}}>
-            <Link to={data[5].url} target="_blank">
+            </Box>
+            <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+              <Link to={data[5].url} target="_blank">
                 <img 
                 src={kasa} 
                 alt={data[5].title} 
@@ -513,23 +544,24 @@ const Roadmap = ({data}) => {
                   justifyContent:"center",
                   borderRadius:"50%"
                 }}/>
-                </Link>
-              </Box>
-          <img src={planetpurple} alt="planet purple" style={{
-                  position:"absolute",
-                  left:"67%",
-                  bottom:"25%",
-                  width:"28%",
-                  height:"8%"
-                }}/>
-                </Box>   
-          </Box>
-    </Box>
+              </Link>
+            </Box>
+        </Box>
+            
+        <img src={planetpurple} alt="planet purple" style={{
+                position:"absolute",
+                left:"67%",
+                bottom:"18%",
+                width:"100px",
+                height:"100px"
+              }}/> 
+          </Box>  
+        </Box>
+  </div>
   )}
   {/* Tablet Device */}
   {isTabletScreens && (
     <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", height:"100%"}}>
-      <img src={mobileroad} alt="Road" style={{ width:"auto", height:"100%", position:"absolute", zIndex:"3", top:"110%", left:"49%", opacity:"85%"}}/>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
               <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",margin:"30% 30% 10px 30%",color:"#FFFFFF",fontSize:"69px"}}>
@@ -540,25 +572,25 @@ const Roadmap = ({data}) => {
               </p>
           </Box>
       </FlexBetween>
-      <img src={bordure} alt="bordure" style={{position:"absolute",top:"88.5%",left:"0", right:"0", zIndex:"4", width:"100%"}}/>
-          <Box sx={{position:"relative", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
-          <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{position:"relative", zIndex:"0", top:"0.3%", width:"100%", height:"100%"}}/>
-              <FlexBetween className="box__img" sx={{justifyContent:"center",position:"relative",zIndex:"4", bottom:"90%"}}>
-                  <Box>
-                      <Link to="https://openclassrooms.com/fr/" style={{width:"86px",height:"86px"}}>
-                          <img src={openclassrooms} alt="logo openclassrooms" style={{height:"86px",justifyContent:"center",borderRadius:"50%"}}/>
-                      </Link>
-                  </Box>
-              </FlexBetween>
+      <div style={{display:"flex", position:"relative", zIndex:"4", height:"90px"}}>
+        <img src={bordure} alt="bordure" style={{width:"100%", height:"100%"}}/>
+      </div>
+          <Box sx={{display:"flex", position:"relative",bottom:"7%", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
+            <div style={{display:"flex",justifyContent:"center", position:"relative", zIndex:"3", width:"auto", padding:"150px 0px 150px 0px"}}>
+              <img src={mobileroad} alt="Road" style={{width:"auto", height:"1100px", opacity:"85%"}}/>
+            </div>
+            <div style={{position:"relative",bottom:"100%", zIndex:"0", width:"auto", height:"1390px"}}>
+              <img src={mobilebgroadmap} alt=" arrière plan roadmap"style={{width:"100%", height:"1390px"}}/>
+            </div>
+            <Box sx={{display:"flex",justifyContent:"center", position:"relative", bottom:"200%", height:"100%", width:"100%"}}>     
           <div className="planet__yellow" style={{
               position:"absolute",
-              top: "11%",
+              top: "15%",
               left:"0%",
               zIndex:"4",
-              width:"20.69%",
-              height:"24.48%",
+              width:"150px",
+              height:"300px",
               marginRight:"0",
-              overflow:"hidden"
               }}>
             <img src={planetyellow} alt="planète jaune" style={{
               position: "relative",
@@ -570,9 +602,34 @@ const Roadmap = ({data}) => {
               objectFit: "cover"
               }} />
           </div>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"83%"}}>
-            <Box sx={{width:"16%", paddingLeft:"31%" }}>
-              <Link to={data[0].url}>
+          <Box className="txt__l"sx={{display:"flex", flexDirection:"column",justifyContent:"stretch", height:"85%", position:"relative", width:"30%", paddingTop:"150px"}}>
+              <Box className="text__box__r" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"100px 0px 150px 40px", width:"80%", height:"160px" }}>
+                <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[0].title}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].langage}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].description}</Typography>
+              </Box>
+              <Box className="text__box__r" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"40px 0px 130px 40px", width:"80%", height:"160px" }}>
+                <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[2].title}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[2].projetnumber}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].langage}</Typography>
+                <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].description}</Typography>
+              </Box>
+              <Box className="text__box__r" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"80px 0px 80px 40px", width:"80%", height:"160px" }}>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[4].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[4].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].description}</Typography>
+              </Box>
+            </Box>
+          <Box className="logo__projet" sx={{display:"flex", flexDirection:"column", justifyContent:"center", height:"100%", width:"10%", paddingTop:"25px"}}>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center",position:"relative",zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link to="https://openclassrooms.com/fr/" style={{width:"86px",height:"86px"}}>
+                    <img src={openclassrooms} alt="logo openclassrooms" style={{height:"86px",justifyContent:"center",borderRadius:"50%"}}/>
+                </Link>
+              </Box>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+              <Link to={data[0].url} target="_blank">
                   <img 
                   src={booki} 
                   alt={data[0].title} 
@@ -584,31 +641,8 @@ const Roadmap = ({data}) => {
                   }}/>
                   </Link>
               </Box>
-              <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[0].title}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[0].projetnumber}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].langage}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[0].description}</Typography>
-                </Box>
-          </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"83%"}}>
-              <Box className="text__box__r"sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  backgroundColor:"#A6C8E8",
-                  borderRadius:"10px",
-                  padding:"5px",
-                  margin:"0px",
-                  width:"30%",
-                  height:"100%"
-                }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[1].title}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[1].projetnumber}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].langage}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].description}</Typography>
-                </Box>
-              <Box sx={{ width:"47.1%", paddingLeft:"5%"}}>
-            <Link href={data[1].url}>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link href={data[1].url} target="_blank">
                 <img 
                 src={ohmyfood} 
                 alt={data[1].title} 
@@ -620,51 +654,11 @@ const Roadmap = ({data}) => {
                 }}/>
                 </Link>
                 </Box>
-          </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"80%"}}>
-            <Box sx={{width:"15.6%", paddingLeft:"31%" }}>
-            <Link to={data[2].url} style={{width:"100%",
-                  height:"100%",}}>
-                <img 
-                src={panthere} 
-                alt={data[2].title} 
-                style={{
-                  width:"86px",
-                  height:"86px",
-                  justifyContent:"center",
-                  borderRadius:"50%"
-                }}/>
-                </Link>
-                </Box>
-                <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[2].title}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[2].projetnumber}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].langage}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[2].description}</Typography>
-                </Box>
-          </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"76%"}}>
-              <Box className="text__box__r"sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  backgroundColor:"#A6C8E8",
-                  borderRadius:"10px",
-                  padding:"5px",
-                  margin:"0px",
-                  width:"30%",
-                  height:"100%"
-                }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[3].title}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[3].projetnumber}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].langage}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].description}</Typography>
-                </Box>
-              <Box sx={{ width:"47.2%", paddingLeft:"5%"}}>
-              <Link to={data[3].url} style={{width:"100%",
-                    height:"100%",}}>
+                <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                  <Link to={data[2].url} target="_blank">
                   <img 
-                  src={kanap} 
-                  alt={data[3].title} 
+                  src={panthere} 
+                  alt={data[2].title} 
                   style={{
                     width:"86px",
                     height:"86px",
@@ -672,68 +666,77 @@ const Roadmap = ({data}) => {
                     borderRadius:"50%"
                   }}/>
                   </Link>
-                  </Box>
-          </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"75%"}}>
-            <Box sx={{width:"15.6%", paddingLeft:"31%" }}>
-            <Link to={data[4].url} style={{width:"100%",
-                  height:"100%",}}>
-                <img 
-                src={hottakes} 
-                alt={data[4].title} 
-                style={{
-                  width:"86px",
-                  height:"86px",
-                  justifyContent:"center",
-                  borderRadius:"50%"
-                }}/>
+                </Box>
+                <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                  <Link to={data[3].url} target="_blank">
+                      <img 
+                      src={kanap} 
+                      alt={data[3].title} 
+                      style={{
+                        width:"86px",
+                        height:"86px",
+                        justifyContent:"center",
+                        borderRadius:"50%"
+                      }}/>
+                      </Link>
+                </Box>
+                <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                  <Link to={data[4].url} target="_blank">
+                  <img 
+                  src={hottakes} 
+                  alt={data[4].title} 
+                  style={{
+                    width:"86px",
+                    height:"86px",
+                    justifyContent:"center",
+                    borderRadius:"50%"
+                  }}/>
+                  </Link>
+              </Box>
+              <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", padding:"50px 0px 50px 0px"}}>
+                <Link to={data[5].url} target="_blank">
+                  <img 
+                  src={kasa} 
+                  alt={data[5].title} 
+                  style={{
+                    width:"86px",
+                    height:"86px",
+                    justifyContent:"center",
+                    borderRadius:"50%"
+                  }}/>
                 </Link>
               </Box>
-              <Box className="text__box__l" tabindex="0" sx={{ display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"0px", width:"25%", height:"100%" }}>
-                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[4].title}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[4].projetnumber}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].langage}</Typography>
-                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[4].description}</Typography>
-                </Box>
           </Box>
-          <Box className="box__img" sx={{display:"flex", justifyContent:"center", width:"100%", height:"auto", position:"relative", zIndex:"4", bottom:"75%"}}>
-              <Box className="text__box__r"sx={{
-                  display:"flex",
-                  flexDirection:"column",
-                  backgroundColor:"#A6C8E8",
-                  borderRadius:"10px",
-                  padding:"5px",
-                  margin:"0px",
-                  width:"30%",
-                  height:"100%"
-                }}>
+          <Box className="txt__r"sx={{display:"flex", flexDirection:"column",justifyContent:"flex-end", height:"90%", position:"relative", width:"30%", paddingTop:"110px"}}>
+          <Box className="text__box__l"sx={{display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"100px 0px 100px 40px", width:"80%", height:"160px"}}>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[1].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[1].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[1].description}</Typography>
+                </Box>
+                
+              <Box className="text__box__l"sx={{display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px", margin:"100px 0px 150px 40px", width:"80%", height:"160px"}}>
+                  <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[3].title}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[3].projetnumber}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].langage}</Typography>
+                  <Typography style={{color:"#000000", fontSize:"15px"}}>{data[3].description}</Typography>
+                </Box>
+              <Box className="text__box__l"sx={{display:"flex", flexDirection:"column", backgroundColor:"#A6C8E8", borderRadius:"10px", padding:"5px",margin:"40px 0px 0px 40px", width:"80%", height:"160px"}}>
                   <Typography style={{ display:"flex", margin:"1px", color:"#000000", fontSize:"15px"}}>{data[5].title}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>Projet {data[5].projetnumber}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].langage}</Typography>
                   <Typography style={{color:"#000000", fontSize:"15px"}}>{data[5].description}</Typography>
                 </Box>
-              <Box sx={{ width:"47.2%", paddingLeft:"5%"}}>
-            <Link to={data[5].url} target="_blank" style={{width:"100%",
-                  height:"100%",}}>
-                <img 
-                src={kasa} 
-                alt={data[5].title} 
-                style={{
-                  width:"86px",
-                  height:"86px",
-                  justifyContent:"center",
-                  borderRadius:"50%"
-                }}/>
-                </Link>
-                </Box>
           </Box>
+              
           <img src={planetpurple} alt="planet purple" style={{
                   position:"absolute",
                   left:"67%",
-                  bottom:"28%",
-                  width:"14%",
-                  height:"7%"
-                }}/>   
+                  bottom:"18%",
+                  width:"100px",
+                  height:"100px"
+                }}/> 
+            </Box>  
           </Box>
     </div>
   )}

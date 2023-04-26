@@ -260,7 +260,24 @@ textarea::placeholder {
     transform: scale(1.05);
   }
 }
+.box__img {
+  opacity: 0;
+}
 
+.box__img.visible {
+  opacity:1;
+  animation: logoAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes logoAnim {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
 .text__box__r {
   opacity: 0;
 }
@@ -269,6 +286,7 @@ textarea::placeholder {
   opacity: 1;
   animation: textAnimr 1.5s ease-in 0s 1 normal forwards;
 }
+
 
 @keyframes textAnimr {
 	0% {

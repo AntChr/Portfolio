@@ -5,9 +5,9 @@ import plus from "../images/plus.png"
 import moins from "../images/moins.png"
 
 const SkillList = ({data, addToCart, removeFromCart}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1024px)")
-  const isTabletScreens = useMediaQuery("((min-width: 768px) and (max-width: 1024px))")
-  const isMobileScreens = useMediaQuery("(max-width: 767.9px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 769px)")
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const dots = [];
   for (let i =0; i < data.rating; i++) {
