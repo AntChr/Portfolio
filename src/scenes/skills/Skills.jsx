@@ -9,9 +9,9 @@ import { CartContext } from '../../components/CartContext'
 
 
 const Skills = () => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
-  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
-  const isMobileScreens = useMediaQuery("(max-width: 769px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1026px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
   const {panier, setPanier}  = useContext(CartContext);  
   const [skillsData, setSkillsData] = useState([])
   const [salaryTotal, setSalaryTotal] = useState(14000)

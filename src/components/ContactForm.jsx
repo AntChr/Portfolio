@@ -8,9 +8,9 @@ import github from "../images/Logos_contact/Github_bleu.png"
 
 
 const ContactForm = () => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
-  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
-  const isMobileScreens = useMediaQuery("(max-width: 769px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1026px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
   const form = useRef();
 
   const sendEmail = (e) => {

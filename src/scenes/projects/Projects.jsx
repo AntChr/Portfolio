@@ -5,9 +5,9 @@ import ProjectList from '../../components/ProjectList'
 import { Box, useMediaQuery } from '@mui/material'
 
 const Projects = () => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
-  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
-  const isMobileScreens = useMediaQuery("(max-width: 769px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1026px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
   const [projectsData, setProjectsData] = useState([])
 
   useEffect(() => {

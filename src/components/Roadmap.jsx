@@ -23,9 +23,9 @@ import mobilebgroadmap from "../images/Bg_roadmap.png"
 
 
 const Roadmap = ({data}) => {
-  const isDesktopScreens = useMediaQuery("(min-width: 1025.001px)")
-  const isTabletScreens = useMediaQuery("((min-width: 769.01px) and (max-width: 1025px))")
-  const isMobileScreens = useMediaQuery("(max-width: 769px)")
+  const isDesktopScreens = useMediaQuery("(min-width: 1026px)")
+  const isTabletScreens = useMediaQuery("((min-width: 769px) and (max-width: 1025px))")
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")
 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const textRefs = useRef([]);
@@ -115,7 +115,7 @@ const Roadmap = ({data}) => {
     <>
     {/* Desktop Device */}
     {isDesktopScreens && (
-    <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", boxSizing:"border-box"}}>
+    <div className="Roadmap" style={{ display:"flex", flexDirection:"column", position:"relative", backgroundColor:"#0A0019"}}>
       <FlexBetween className="Roadmap__title" sx={{flexDirection:'column',width:"auto"}}>
           <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",height:"986px",width:"100%"}}>
               <h2 style={{display:"flex",justifyContent:"center",alignItems:"end",color:"#FFFFFF",fontSize:"69px"}}>
@@ -126,10 +126,12 @@ const Roadmap = ({data}) => {
               </p>
           </Box>
       </FlexBetween>
-      <img src={bordure} alt="bordure" style={{position:"absolute", top:"100vh", zIndex:"4", width:"100%", height:"180px"}}/>
+      <div style={{display:"flex", position:"relative", zIndex:"4", height:"100px", bottom:"1px"}}>
+        <img src={bordure} alt="bordure" style={{width:"100%", height:"100%"}}/>
+      </div>
       <img src={road} alt="Road" style={{ width:"62.5%", height:"76%", position:"absolute", zIndex:"3", top:"9%", left:"19%", opacity:"85%"}}/>
-          <Box sx={{position:"relative"}}>
-          <img src={bgroadmap} alt="arrière plan roadmap" style={{position:"relative", top:"5px", zIndex:"0", width:"100%"}}/>
+          <Box sx={{display:"flex", position:"relative",bottom:"70px"}}>
+          <img src={bgroadmap} alt="arrière plan roadmap" style={{position:"relative", zIndex:"0", width:"100%"}}/>
               <FlexBetween className="box__img" sx={{justifyContent:"center",position:"absolute",zIndex:"4",left:"44.8%",top:"5%"}}>
                   <Box>
                       <Link to="https://openclassrooms.com/fr/" target="_blank" style={{width:"100%",height:"100%"}}>
@@ -145,8 +147,8 @@ const Roadmap = ({data}) => {
               top: "5%",
               left:"0%",
               zIndex:"4",
-              width:"22.4%",
-              height:"12.68%",
+              width:"22.2%",
+              height:"12.69%",
               marginRight:"0",
               overflow:"hidden"
               }}>
@@ -408,7 +410,7 @@ const Roadmap = ({data}) => {
                 </Box>
               </Box>
           </FlexBetween>
-          </Box>
+        </Box>
           <img src={planetpurple} alt="planet purple" style={{
                   position:"absolute",
                   left:"70%",
@@ -435,7 +437,7 @@ const Roadmap = ({data}) => {
     <div style={{display:"flex", position:"relative", zIndex:"4", height:"90px"}}>
       <img src={bordure} alt="bordure" style={{width:"100%", height:"100%"}}/>
     </div>
-        <Box sx={{display:"flex", position:"relative",bottom:"7%", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
+        <Box sx={{display:"flex", position:"relative",bottom:"6%", height:"1390px", marginBottom:"0px",  flexDirection:"column", borderBottom:"20px solid #0A0019" }}>
           <div style={{display:"flex",justifyContent:"center", position:"relative", zIndex:"3", width:"auto", padding:"150px 0px 150px 0px"}}>
             <img src={mobileroad} alt="Road" style={{width:"auto", height:"1100px", opacity:"85%"}}/>
           </div>
@@ -550,8 +552,8 @@ const Roadmap = ({data}) => {
             
         <img src={planetpurple} alt="planet purple" style={{
                 position:"absolute",
-                left:"67%",
-                bottom:"18%",
+                left:"64%",
+                bottom:"24%",
                 width:"100px",
                 height:"100px"
               }}/> 
@@ -575,7 +577,7 @@ const Roadmap = ({data}) => {
       <div style={{display:"flex", position:"relative", zIndex:"4", height:"90px"}}>
         <img src={bordure} alt="bordure" style={{width:"100%", height:"100%"}}/>
       </div>
-          <Box sx={{display:"flex", position:"relative",bottom:"7%", height:"1390px", marginBottom:"0px",  flexDirection:"column" }}>
+          <Box sx={{display:"flex", position:"relative",bottom:"7%", height:"1390px", marginBottom:"0px",  flexDirection:"column", borderBottom:"26px solid #0A0019" }}>
             <div style={{display:"flex",justifyContent:"center", position:"relative", zIndex:"3", width:"auto", padding:"150px 0px 150px 0px"}}>
               <img src={mobileroad} alt="Road" style={{width:"auto", height:"1100px", opacity:"85%"}}/>
             </div>
