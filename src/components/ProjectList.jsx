@@ -70,11 +70,12 @@ const ProjectList = ({data}) => {
           <Typography variant="subtitle1"sx={{color:"#000000"}}>{data.langage}</Typography>
         </Box>
         <Box sx={{ width:"100%", textAlign:"center"}}>
-          <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>{signal()}<p style={{width:"35%", color:"#000000",}}>{data.statut}</p></div>
+          <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>{signal()}<p style={{width:"45%", color:"#000000",}}>{data.statut}</p></div>
         </Box>
         <Box sx={{width:"100%", textAlign:"center"}}>
           <p style={{color:"#000000"}}>{data.description}</p>
         </Box>
+        <div style={{width:"50%", backgroundColor:"#FFFFFF", height:"2px", marginTop:"20px"}}></div>
     </Box>
     )}
         {/* Tablet Device */}

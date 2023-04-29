@@ -11,31 +11,13 @@ import { CartContext } from '../../components/CartContext'
 const Skills = () => {
   const isDesktopScreens = useMediaQuery("(min-width: 1026px)")
   const isTabletScreens = useMediaQuery("((min-width: 769px) and (max-width: 1025px))")
-  const isMobileScreens = useMediaQuery("(max-width: 768px)")
-  const {panier, setPanier}  = useContext(CartContext);  
+  const isMobileScreens = useMediaQuery("(max-width: 768px)")  
   const [skillsData, setSkillsData] = useState([])
-  const [salaryTotal, setSalaryTotal] = useState(14000)
 
   useEffect(() => {
     setSkillsData(skills)
   },[])
 
-  function addcart(skill) {
-    const existingskill = panier.find(comp => comp.id === skill.id)
-    if (existingskill) {
-      window.alert("Vous pouvez ajouter qu'une seule fois la compétence")
-    } else {
-    setPanier([...panier, {...skill, price: skill.price || 14000, id: skill.id}])
-    setSalaryTotal(prevtotal => prevtotal+ (skill.price || salaryTotal))
-    }
-  }
-
-  const removeFromCart = (skill) => {
-    const skillToRemove = panier.find((comp) => comp.id === skill.id);
-    const newCart = panier.filter((comp) => comp.id !== skill.id);
-    setPanier(newCart);
-    setSalaryTotal(salaryTotal - skillToRemove.price);
-  };
 
   return (
     <>
@@ -47,18 +29,17 @@ const Skills = () => {
           <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"54px", marginBottom:"109px"}}>Compétences</Typography>
           </Box>
         <Box className="skills__body" sx={{ display:"flex", backgroundColor:"#A6C8E8", borderRadius:"0px 78px 0px 0px", width:"95%", height:"auto"}}>
-          <Card data={skillsData} />
           <Box className="skills__list" sx={{
                   display:"flex",
                   flexWrap:"wrap",
                   width:"100%",
                   height:"100%",
                   borderRadius:"25px",
-                  padding:"34px",
+                  padding:"34px 0px 34px 34px",
                   maxWidth:"100%"
           }}>
             {skillsData.map((skill) => (
-                <SkillList key={skill.id} data={skill} addToCart={() => addcart(skill)} removeFromCart={() => removeFromCart(skill)}/>
+                <SkillList key={skill.id} data={skill}/>
             ))}
           </Box>
         </Box>
@@ -72,7 +53,6 @@ const Skills = () => {
           <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"54px", marginBottom:"109px"}}>Compétences</Typography>
           </Box>
         <Box className="skills__body" sx={{ display:"flex", backgroundColor:"#A6C8E8", borderRadius:"0px 78px 0px 0px", width:"100%", height:"auto"}}>
-          <Card data={skillsData} />
           <Box className="skills__list" sx={{
                   display:"flex",
                   flexWrap:"wrap",
@@ -82,7 +62,7 @@ const Skills = () => {
                   padding:"34px",
           }}>
             {skillsData.map((skill) => (
-                <SkillList key={skill.id} data={skill} addToCart={() => addcart(skill)} removeFromCart={() => removeFromCart(skill)}/>
+                <SkillList key={skill.id} data={skill}/>
             ))}
           </Box>
         </Box>
@@ -104,7 +84,6 @@ const Skills = () => {
           margin:"19px 10px 19px 19px",
           marginRight:"0px"
           }}>
-          <Card data={skillsData} />
           <Box className="skills__list" sx={{
                   display:"flex",
                   flexDirection:"column",
@@ -116,7 +95,7 @@ const Skills = () => {
           }}>
             {skillsData.map((skill) => (
               <Box>
-                <SkillList key={skill.id} data={skill} addToCart={() => addcart(skill)} removeFromCart={() => removeFromCart(skill)}/>
+                <SkillList key={skill.id} data={skill}/>
               </Box>
             ))}
           </Box>

@@ -78,6 +78,7 @@ const Highlights = ({data}) => {
                 objectFit:'cover'
               }}
             />
+            <h3 style={{position:"relative", zIndex:"1", width:"100%", height:"50px", backgroundColor:"#0A0019", bottom:"12%", color:"#FFFFFF", opacity:"0.7", padding:"5px"}}>{item.title}</h3>
             {currentImageIndex === index && (
               <Box>
                 <Box sx={{

@@ -1,11 +1,19 @@
 [
     {   
+        "id":"00",
+        "url":"https://openclassrooms.com/fr/",
+        "title": "OpenClassrooms",
+        "projetnumber":"",
+        "langage":"",
+        "description":"Formation de Développeur Web d'une durée de 6 mois avec la réalisation de 6 projets tirés de cas concrets."
+    },
+    {   
         "id":"01",
         "url":"https://antchr.github.io/Projet-2/",
         "title": "Booki",
         "projetnumber":"1",
         "langage":"HTML & CSS",
-        "description":"Site internet qui permet aux usagers de trouver des hébergements et des activités dans la ville de leur choix"
+        "description":"Site internet qui permet aux usagers de trouver des hébergements et des activités dans la ville de leur choix."
     },
     {   
         "id":"02",
@@ -13,7 +21,7 @@
         "title": "Ohmyfood",
         "projetnumber":"2",
         "langage":"HTML & SASS",
-        "description":"Site 100% mobile qui répertorie les menus de restaurants gastronomiques"
+        "description":"Site 100% mobile qui répertorie les menus de restaurants gastronomiques."
     },
     {   
         "id":"03",
@@ -21,7 +29,7 @@
         "title": "La Panthère",
         "projetnumber":"3",
         "langage":"SEO & Accessibilité",
-        "description":"Amélioration du référencement d'un site existant"
+        "description":"Amélioration du référencement d'un site existant."
     },
     {   
         "id":"04",
@@ -29,7 +37,7 @@
         "title": "Kanap",
         "projetnumber":"4",
         "langage":"Javascript",
-        "description":"Création d'une plateforme e-commerce pour vendre des canapés sur internet"
+        "description":"Création d'une plateforme e-commerce pour vendre des canapés sur internet."
     },
     {   
         "id":"05",
@@ -37,7 +45,7 @@
         "title": "Hot Takes",
         "projetnumber":"5",
         "langage":"Javascript, Express, MongoDB",
-        "description":"Construction d'une API sécurisée pour une application d'avis gastronomiques"
+        "description":"Construction d'une API sécurisée pour une application d'avis gastronomiques."
     },
     {   
         "id":"06",
@@ -45,6 +53,6 @@
         "title": "Kasa",
         "projetnumber":"6",
         "langage":"React",
-        "description":"Création d'une application web de location immobilière"
+        "description":"Création d'une application web de location immobilière."
     }
 ]

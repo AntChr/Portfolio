@@ -95,9 +95,25 @@ html {
   height: 50%;
 }
 
+.highlight:hover {
+  animation: zoom-in-zoom-out 2s ease-out;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 .highlight-active {
-  width: 70%;
-  height: 95%;
+  width: 60%;
+  height: 80%;
   animation: scale-up-tl 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 @keyframes scale-up-tl {
