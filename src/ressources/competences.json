@@ -102,5 +102,29 @@
         "rating":"3",
         "price":5750,
         "add": true
+    },
+    {
+        "id":"5c02",
+        "title":"NodeJS",
+        "cover":"./Skills/nodejs.png",
+        "rating":"3",
+        "price":5750,
+        "add": true
+    },
+    {
+        "id":"5c03",
+        "title":"MongoDB",
+        "cover":"./Skills/mongodb.jpg",
+        "rating":"3",
+        "price":5750,
+        "add": true
+    },
+    {
+        "id":"6c01",
+        "title":"Express",
+        "cover":"./Skills/express.png",
+        "rating":"3",
+        "price":5750,
+        "add": true
     }
 ]

@@ -53,7 +53,6 @@ const SkillList = ({data, addToCart, removeFromCart}) => {
       height:"316px",
       backgroundColor:"rgba(0, 32, 139, 0.86)",
       borderRadius:"48px 48px 48px 0px",
-      margin:"0px 30px 30px 0px"
       }}>
         <Box sx={{width:"100%", height:"80%",}}>
         <img src={data.cover} alt={data.title} style={{ width:"100%", height:"100%", objectFit:"cover", borderRadius:"48px 48px 0px 0px", backgroundColor:"#FFFFFF"}}/>

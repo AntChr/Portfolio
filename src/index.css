@@ -255,14 +255,6 @@ textarea::placeholder {
   color:#4545D8;
 }
 
-.message {
-  width:824px;
-  height:244px;
-  background-color:#4545D852;
-  border-radius:20px;
-  border:none;
-  padding: 16px;
-}
 .message:focus-within{
   outline: none;
   animation: zoom-in 0.4s ease-in-out;

@@ -130,7 +130,7 @@ const ContactForm = () => {
 
       {/* Tablet Device */}
      {isTabletScreens && (
-    <Box className="contact" sx={{display:"flex", flexDirection:"column", width:"100%", height:"auto", paddingTop:"50px"}}>
+    <Box className="contact" sx={{display:"flex",justifyContent:"center", flexDirection:"column", width:"100%", height:"95%"}}>
       <Box sx={{width:"auto", height:"auto", padding:"15px"}}>
         <Box sx={{display:"flex",flexDirection:"column", justifyContent:"flex-start"}}>
           <Typography variant="h1" style={{fontSize:"44px", marginBottom:"10px"}}>
@@ -150,6 +150,7 @@ const ContactForm = () => {
           }}>
           <Box sx={{display:"flex", flexDirection:"column", width:"100%", height:"auto",}}>
           <form ref={form} onSubmit={sendEmail}>
+          <Box sx={{width:"100%", marginBottom:"17px"}}>
           <input className="user" type="text" name="user_name" placeholder="Nom" style={{
             width:"90%",
             height:"48px",
@@ -157,23 +158,24 @@ const ContactForm = () => {
             borderRadius:"20px",
             border:"none",
             marginRight:"17px",
-            marginBottom:"17px",
             paddingLeft:"16px"
             }}/>
+            </Box>
+            <Box sx={{width:"100%", marginBottom:"17px"}}>
           <input className="user" type="email" name="user_email" placeholder="Email" style={{
             width:"90%",
             height:"48px",
             backgroundColor:"#4545D852",
             borderRadius:"20px",
             border:"none",
-            paddingLeft:"16px",
-            marginBottom:"17px"            
+            paddingLeft:"16px",          
             }} />
+            </Box>
           <Box sx={{width:"100%", marginBottom:"17px"}}>
           <input className="user" type="text" name="subject" placeholder="Sujet" style={{width:"90%", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none",paddingLeft:"16px"}}/>
           </Box>
-          <Box sx={{marginBottom:"14px"}}>
-          <textarea className="message" name="message" placeholder="Message" style={{width:"90%", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none"}}/>
+          <Box sx={{width:"100%", marginBottom:"14px"}}>
+          <textarea className="message" name="message" placeholder="Message" style={{width:"90%", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none", padding:"16px 0px 0px 16px"}}/>
           </Box>
           <Box sx={{display:"flex", justifyContent:"center", width:"100%", marginBottom:"34px"}}>
           <input className="send" type="submit" placeholder="Envoyer" onClick={() => window.alert("Votre message a bien été envoyé")} 
@@ -260,7 +262,7 @@ const ContactForm = () => {
           <input className="user" type="text" name="subject" placeholder="Sujet" style={{width:"90%", height:"48px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none",paddingLeft:"16px"}}/>
           </Box>
           <Box sx={{marginBottom:"14px"}}>
-          <textarea className="message" name="message" placeholder="Message" style={{width:"86%", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none"}}/>
+          <textarea className="message" name="message" placeholder="Message" style={{width:"90%", height:"244px", backgroundColor:"#4545D852", borderRadius:"20px", border:"none", padding:"16px 0px 0px 16px"}}/>
           </Box>
           <Box sx={{display:"flex", justifyContent:"flex-end", width:"100%", marginBottom:"34px"}}>
           <input className="send" type="submit" placeholder="Envoyer" onClick={() => window.alert("Votre message a bien été envoyé")} 

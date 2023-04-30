@@ -52,11 +52,12 @@ const Skills = () => {
         <Box className="skills__title">
           <Typography variant="h1" style={{color:"#FFFFFF", fontSize:"54px", marginBottom:"109px"}}>Compétences</Typography>
           </Box>
-        <Box className="skills__body" sx={{ display:"flex", backgroundColor:"#A6C8E8", borderRadius:"0px 78px 0px 0px", width:"100%", height:"auto"}}>
+        <Box className="skills__body" sx={{backgroundColor:"#A6C8E8", borderRadius:"0px 78px 0px 0px", width:"100%", height:"auto"}}>
           <Box className="skills__list" sx={{
-                  display:"flex",
-                  flexWrap:"wrap",
-                  width:"50%",
+                  display:"grid",
+                  gridTemplateColumns:"1fr 1fr",
+                  gap:"30px",
+                  width:"auto",
                   height:"100%",
                   borderRadius:"25px",
                   padding:"34px",
