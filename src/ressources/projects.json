@@ -19,10 +19,10 @@
     },
     {   
         "id":"p03",
-        "url":"",
+        "url":"https://ac-social-media-app.vercel.app/",
         "image":"./Logos_projets/Social_media.png",
-        "title": "Réseau Social",
-        "statut": "En cours",
+        "title": "AC - Réseau Social",
+        "statut": "Terminé",
         "langage":"React - Express - MongoDB - NodeJS",
         "description":"Application FullStack d'un réseau social avec la création et la sécurisation des données utilisateurs et toute les fonctionnalité d'un réseau social ainsi qu'un dark mode"
     },
