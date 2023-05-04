@@ -40,7 +40,7 @@
         "url":"",
         "image":"./Logos_projets/Graphic.png",
         "title": "Dashboard",
-        "statut": "Prochainement",
+        "statut": "En cours",
         "langage":"React - Material UI",
         "description":"Site comportant toutes les fonctionnalité d'un dashboard avec notamment un calendrier, graphique tableau, répartition des tâches etc..."
     },
