@@ -37,10 +37,10 @@
     },
     {   
         "id":"p05",
-        "url":"",
+        "url":"https://dashboard-ac.vercel.app/",
         "image":"./Logos_projets/Graphic.png",
         "title": "Dashboard",
-        "statut": "En cours",
+        "statut": "Terminé",
         "langage":"React - Material UI",
         "description":"Site comportant toutes les fonctionnalité d'un dashboard avec notamment un calendrier, graphique tableau, répartition des tâches etc..."
     },
